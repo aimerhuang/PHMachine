@@ -1,0 +1,40 @@
+2021-07-21 17:16:48,019[3]WARN InfoLog[(null)]-更新设备状态成功ONLINE
+2021-07-21 17:16:54,733[12]WARN InfoLog[(null)]-更新设备状态成功FREE
+2021-07-21 17:16:57,314[17]WARN InfoLog[(null)]-更新设备状态成功ACCEPTTING
+2021-07-21 17:16:57,320[17]WARN InfoLog[(null)]-========================================
+2021-07-21 17:16:57,320[17]WARN InfoLog[(null)]-执行DoCommandMethod,方法名：S_YYSQXX 参数：{"SFZHORYWBH":"110111199512160099","SLDW":"110111060000","WSYYRQ":"20210721"}
+2021-07-21 17:16:57,707[17]WARN InfoLog[(null)]-接口返回值：{"ExeResult":4,"MessageInfo":"没有查询到您的今日有效预约信息，若有疑问，请移步人工窗口咨询！","ReturnValue":null,"SignalMarker":0,"PrintqzStata":0,"FucID":null,"IsSucceed":true,"IsException":false}
+2021-07-21 17:16:59,556[5]WARN InfoLog[(null)]-更新设备状态成功FREE
+2021-07-21 17:17:01,530[1]WARN InfoLog[(null)]-更新设备状态成功OFFLINE
+2021-07-21 17:29:54,709[3]WARN InfoLog[(null)]-更新设备状态成功ONLINE
+2021-07-21 17:30:02,316[7]WARN InfoLog[(null)]-更新设备状态成功FREE
+2021-07-21 17:30:04,890[17]WARN InfoLog[(null)]-更新设备状态成功ACCEPTTING
+2021-07-21 17:30:04,892[17]WARN InfoLog[(null)]-========================================
+2021-07-21 17:30:04,892[17]WARN InfoLog[(null)]-执行DoCommandMethod,方法名：S_YYSQXX 参数：{"SFZHORYWBH":"110111199512160099","SLDW":"110111060000","WSYYRQ":"20210721"}
+2021-07-21 17:30:05,283[17]WARN InfoLog[(null)]-接口返回值：{"ExeResult":4,"MessageInfo":"没有查询到您的今日有效预约信息，若有疑问，请移步人工窗口咨询！","ReturnValue":null,"SignalMarker":0,"PrintqzStata":0,"FucID":null,"IsSucceed":true,"IsException":false}
+2021-07-21 17:30:27,783[1]WARN InfoLog[(null)]-更新设备状态成功OFFLINE
+2021-07-21 17:31:23,904[5]WARN InfoLog[(null)]-更新设备状态成功ONLINE
+2021-07-21 17:31:30,491[3]WARN InfoLog[(null)]-更新设备状态成功FREE
+2021-07-21 17:31:33,174[21]WARN InfoLog[(null)]-更新设备状态成功ACCEPTTING
+2021-07-21 17:31:33,176[21]WARN InfoLog[(null)]-========================================
+2021-07-21 17:31:33,176[21]WARN InfoLog[(null)]-执行DoCommandMethod,方法名：S_YYSQXX 参数：{"SFZHORYWBH":"110111199512160099","SLDW":"110111060000","WSYYRQ":"20210721"}
+2021-07-21 17:31:33,566[21]WARN InfoLog[(null)]-接口返回值：{"ExeResult":4,"MessageInfo":"没有查询到您的今日有效预约信息，若有疑问，请移步人工窗口咨询！","ReturnValue":null,"SignalMarker":0,"PrintqzStata":0,"FucID":null,"IsSucceed":true,"IsException":false}
+2021-07-21 17:37:21,300[5]WARN InfoLog[(null)]-更新设备状态成功ONLINE
+2021-07-21 17:37:28,375[3]WARN InfoLog[(null)]-更新设备状态成功FREE
+2021-07-21 17:37:31,026[22]WARN InfoLog[(null)]-更新设备状态成功ACCEPTTING
+2021-07-21 17:37:31,028[22]WARN InfoLog[(null)]-========================================
+2021-07-21 17:37:31,029[22]WARN InfoLog[(null)]-执行DoCommandMethod,方法名：S_YYSQXX 参数：{"SFZHORYWBH":"110111199512160099","SLDW":"110111060000","WSYYRQ":"20210721"}
+2021-07-21 17:37:31,418[22]WARN InfoLog[(null)]-接口返回值：{"ExeResult":4,"MessageInfo":"没有查询到您的今日有效预约信息，若有疑问，请移步人工窗口咨询！","ReturnValue":null,"SignalMarker":0,"PrintqzStata":0,"FucID":null,"IsSucceed":true,"IsException":false}
+2021-07-21 17:38:21,752[5]WARN InfoLog[(null)]-更新设备状态成功ONLINE
+2021-07-21 17:38:28,961[3]WARN InfoLog[(null)]-更新设备状态成功FREE
+2021-07-21 17:38:31,678[22]WARN InfoLog[(null)]-更新设备状态成功ACCEPTTING
+2021-07-21 17:38:31,679[22]WARN InfoLog[(null)]-========================================
+2021-07-21 17:38:31,680[22]WARN InfoLog[(null)]-执行DoCommandMethod,方法名：S_YYSQXX 参数：{"SFZHORYWBH":"110111199512160099","SLDW":"110111060000","WSYYRQ":"20210721"}
+2021-07-21 17:38:32,085[22]WARN InfoLog[(null)]-接口返回值：{"ExeResult":4,"MessageInfo":"没有查询到您的今日有效预约信息，若有疑问，请移步人工窗口咨询！","ReturnValue":null,"SignalMarker":0,"PrintqzStata":0,"FucID":null,"IsSucceed":true,"IsException":false}
+2021-07-21 17:40:19,353[5]WARN InfoLog[(null)]-更新设备状态成功ONLINE
+2021-07-21 17:40:27,045[3]WARN InfoLog[(null)]-更新设备状态成功FREE
+2021-07-21 17:40:29,703[22]WARN InfoLog[(null)]-更新设备状态成功ACCEPTTING
+2021-07-21 17:40:29,706[22]WARN InfoLog[(null)]-========================================
+2021-07-21 17:40:29,706[22]WARN InfoLog[(null)]-执行DoCommandMethod,方法名：S_YYSQXX 参数：{"SFZHORYWBH":"110111199512160099","SLDW":"110111060000","WSYYRQ":"20210721"}
+2021-07-21 17:40:30,129[22]WARN InfoLog[(null)]-接口返回值：{"ExeResult":4,"MessageInfo":"没有查询到您的今日有效预约信息，若有疑问，请移步人工窗口咨询！","ReturnValue":null,"SignalMarker":0,"PrintqzStata":0,"FucID":null,"IsSucceed":true,"IsException":false}
+2021-07-21 17:40:45,129[1]WARN InfoLog[(null)]-更新设备状态成功OFFLINE

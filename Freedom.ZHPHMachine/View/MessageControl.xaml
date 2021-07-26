@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Freedom.ZHPHMachine.View.MessageControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:my="clr-namespace:Freedom.Controls;assembly=Freedom.Controls" 
+      xmlns:local="clr-namespace:Freedom.ZHPHMachine.View"
+      mc:Ignorable="d" Background="{StaticResource ContentBackground}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{StaticResource TipBackground}">
+            <TextBlock Text="消息提示"
+                       Visibility="{Binding TipMessage,Converter={StaticResource boolToVisibilityConverter}}"
+                       HorizontalAlignment="Center" FontSize="48" Padding="10"/>
+        </Grid>
+        <TextBlock Text="{Binding MessageTipsContent}" FontSize="50" 
+                           Foreground="{StaticResource HSForeground1}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" LineHeight="50" Margin="150,50" Grid.Row="1"/>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Style="{StaticResource NextButtonStyle}" 
+                         Margin="20" Command="{Binding CloseReminderCommand}">
+                <Button.Content>
+                    <TextBlock FontSize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=FontSize}">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat=" {1}{0}">
+                                <Binding Path="StrCountdownValue"/>
+                                <Binding Path="GoBackContent"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource NextButtonStyle}" 
+                    Content="{Binding GOContent}" Visibility="{Binding IsGoOnShow}"
+                    Command="{Binding GOOnCommand}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

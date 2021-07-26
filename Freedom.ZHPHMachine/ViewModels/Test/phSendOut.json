@@ -1,0 +1,41 @@
+{
+  "ExeResult": 0,
+  "MessageInfo": null,
+  "ReturnValue": [
+    {
+      "Id": 2451910080005.0,
+      "PREFIX": "A",
+      "PH_NUMBER": 5,
+      "SERVICE_CODE": "A245",
+      "SERVICE_CNDEC": "智慧受理号",
+      "SERVICE_ENDESC": "-",
+      "SERVICE_PRINTDESC": "内地居民业务",
+      "SFZH": "422826199305090720",
+      "ZWXM": "陈微",
+      "YWXM": "CHENWEI",
+      "CRATE_USER": null,
+      "IS_BOOKING": "1",
+      "YWBH": "440319100800310,440319100800323,440319100800336",
+      "IS_PHOTO": "0",
+      "ZPHZM": null,
+      "CURRENTHJ": "F-001",
+      "PH_TIME": "2019-10-08 18:26:12",
+      "YY_TIME": "2019-10-08 08:00-21:00",
+      "PH_WAITNUMS": 0,
+      "PH_SUMWAITNUMS": 0,
+      "PH_TYPE": "0",
+      "PRINT_GUIDE": "请您移步到免费拍照区等候拍照！",
+      "QY_CODE": "440300_0035",
+      "CALLTIMES": 0,
+      "CALLUSER": null,
+      "IS_CHECKIN": "0",
+      "CLZT": 0,
+      "MessageInfo": null
+    }
+  ],
+  "SignalMarker": 0,
+  "PrintqzStata": 0,
+  "FucID": null,
+  "IsSucceed": true,
+  "IsException": false
+}

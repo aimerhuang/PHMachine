@@ -1,0 +1,176 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Freedom.ZHPHMachine.Themes">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Themes/TextBlockStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <!--基本按钮样式-->
+    <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="MinHeight" Value="70"/>
+        <Setter Property="Foreground" Value="{StaticResource HSForeground}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}"/>
+        <Setter Property="FontSize" Value="36"/>
+        <Setter Property="local:ControlAttachProperty.FIcon" Value="{x:Null}"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border SnapsToDevicePixels="True"  Height="{TemplateBinding Height}" MinHeight="{TemplateBinding MinHeight}" 
+                          MinWidth="{TemplateBinding MinWidth}" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}" 
+                          CornerRadius="{StaticResource CornerRadius}" Visibility="{TemplateBinding Visibility}" 
+                          VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                            <TextBlock Text="{TemplateBinding local:ControlAttachProperty.FIcon}"  
+                                       Style="{StaticResource FIcon}" Margin="{TemplateBinding Padding}" FontSize="{TemplateBinding FontSize}"
+                                       Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center"/>
+                            <ContentPresenter Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" VerticalAlignment="Center">
+                                <!--<ContentPresenter.Resources>
+                                    <Style TargetType="{x:Type TextBlock}"> 
+                                        <Setter Property="FontFamily" Value="{StaticResource FontFamily}"/> 
+                                    </Style>
+                                </ContentPresenter.Resources>-->
+                            </ContentPresenter>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--退出按钮样式-->
+    <Style x:Key="ExitButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+        <Setter Property="Background" Value="{StaticResource btnHighlightBackground}"/>
+        <Setter Property="MinWidth" Value="240"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+    <!--上一步按钮样式-->
+    <Style x:Key="LastButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+        <Setter Property="Background" Value="{StaticResource btnDullBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource HSDullForeground}"/>
+        <Setter Property="MinWidth" Value="240"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+    <!--下一步按钮样式-->
+    <Style x:Key="NextButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+        <Setter Property="Background" Value="{StaticResource btnNormalBackground}"/>
+        <Setter Property="MinWidth" Value="240"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+
+    <!--数字键盘按键样式-->
+    <Style x:Key="KeyboardNumButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+        <Setter Property="Background" Value="{StaticResource btnNormalBackground}"/>
+        <Setter Property="MinWidth" Value="80"/>
+        <Setter Property="MinHeight" Value="81"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="FontSize" Value="30"/>
+    </Style>
+
+    <!--数字键盘按键样式-->
+    <Style x:Key="KeyboardButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+        <Setter Property="Background" Value="{StaticResource btnNormalBackground}"/>
+        <Setter Property="MinWidth" Value="70"/>
+        <Setter Property="MinHeight" Value="71"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="FontSize" Value="28"/>
+    </Style>
+
+    <!--<Style x:Key="ShadowStyle">
+        <Setter Property="Control.Foreground" Value="LightGray" />ImageTipBackground
+    </Style>-->
+
+    <Style x:Key="InputBoxButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="MinHeight" Value="55" />
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="{StaticResource btnBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource HSForeground2}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="btnBor" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                    CornerRadius="20"  
+                    BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                    Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition  Width="Auto" />
+                                <ColumnDefinition  Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <!--Label区域-->
+                            <TextBlock Text="{TemplateBinding local:ControlAttachProperty.Label}" VerticalAlignment="Center" 
+                                       FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}" Margin="10,0"/>
+                            <TextBlock Text="{Binding Path=Content,RelativeSource={RelativeSource TemplatedParent},ValidatesOnDataErrors=True,ValidatesOnExceptions=True}" 
+                                       TextTrimming="CharacterEllipsis"
+                               Foreground="{TemplateBinding Foreground}" FontFamily="{TemplateBinding FontFamily}" 
+                               FontSize="{TemplateBinding FontSize}" Grid.Column="1" ToolTip="{TemplateBinding Content}"
+                               VerticalAlignment="Center" />
+                            <!--水印-->
+                            <TextBlock x:Name="Message"  Padding="{TemplateBinding Padding}" Visibility="Collapsed"
+                                       Text="{TemplateBinding local:ControlAttachProperty.Watermark}" Grid.Column="1"
+                                       Foreground="{TemplateBinding Foreground}" IsHitTestVisible="False" 
+                                       Opacity="{StaticResource Opacity}"
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="5,2,5,2" />
+
+                            <TextBlock Grid.Column="2" Text="&#xe60d;" Style="{StaticResource FIcon}" 
+                                           Foreground="{StaticResource TipBackground}" FontSize="25" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="3" Text="" Foreground="{StaticResource TipBackground}" 
+                                       FontSize="25" Margin="5,0,10,0" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True" >
+                <Setter Property="BorderBrush" Value="Red"></Setter>
+                <Setter Property="BorderThickness" Value="3" ></Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="Gainsboro" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+        <Setter Property="Background" Value="{StaticResource btnDullBackground}"/>
+        <Setter Property="Margin" Value="5,5,5,50"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+    <Style x:Key="Border2Style" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+        <Setter Property="Background" Value="{StaticResource btnBackground}"/>
+        <Setter Property="Margin" Value="5,5,5,5"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+    <Style x:Key="BorderStyle3" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+        <Setter Property="Background" Value="{StaticResource btnBackground}"/>
+        <Setter Property="Margin" Value="5,5,5,5"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+</ResourceDictionary>

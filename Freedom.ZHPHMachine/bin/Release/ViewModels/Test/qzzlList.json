@@ -1,0 +1,480 @@
+{
+  "ExeResult": 0,
+  "MessageInfo": "",
+  "ReturnValue": [
+    {
+      "SQLB": "104",
+      "CODE": "27",
+      "DESCRIPTION": "赴台商务",
+      "STATUS": "2",
+      "QZLXList": [
+        {
+          "QWD": "TWN",
+          "CODE": "TWN6M1T",
+          "DESCRIPTION": "6个月一次",
+          "STATUS": "1",
+          "REMARK": "赴台商务"
+        },
+        {
+          "QWD": "TWN",
+          "CODE": "TWN1Y9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "赴台商务"
+        }
+      ],
+      "REMARK": "赴台"
+    },
+    {
+      "SQLB": "104",
+      "CODE": "29",
+      "DESCRIPTION": "赴台其他",
+      "STATUS": "2",
+      "QZLXList": [
+        {
+          "QWD": "TWN",
+          "CODE": "TWN6M1T",
+          "DESCRIPTION": "6个月一次",
+          "STATUS": "1",
+          "REMARK": "赴台其他"
+        },
+        {
+          "QWD": "TWN",
+          "CODE": "TWN9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "赴台其他"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "104",
+      "CODE": "21",
+      "DESCRIPTION": "赴台探亲",
+      "STATUS": "2",
+      "QZLXList": [
+        {
+          "QWD": "TWN",
+          "CODE": "TWN6M1T",
+          "DESCRIPTION": "6个月一次",
+          "STATUS": "1",
+          "REMARK": "赴台探亲"
+        },
+        {
+          "QWD": "TWN",
+          "CODE": "TWN1Y9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "赴台探亲"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "104",
+      "CODE": "22",
+      "DESCRIPTION": "赴台应邀",
+      "STATUS": "2",
+      "QZLXList": [
+        {
+          "QWD": "TWN",
+          "CODE": "TWN6M1T",
+          "DESCRIPTION": "6个月一次",
+          "STATUS": "1",
+          "REMARK": "赴台应邀"
+        },
+        {
+          "QWD": "TWN",
+          "CODE": "TWN1Y9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "赴台应邀"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "102",
+      "CODE": "11",
+      "DESCRIPTION": "探亲签注",
+      "STATUS": "1",
+      "QZLXList": [
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "探亲"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M2T",
+          "DESCRIPTION": "3个月二次",
+          "STATUS": "1",
+          "REMARK": "探亲"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG1Y9T",
+          "DESCRIPTION": "1年多次",
+          "STATUS": "1",
+          "REMARK": "探亲"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "探亲"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC3M2T",
+          "DESCRIPTION": "3个月二次",
+          "STATUS": "1",
+          "REMARK": "探亲"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC1Y9T",
+          "DESCRIPTION": "1年多次",
+          "STATUS": "1",
+          "REMARK": "探亲"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "102",
+      "CODE": "12",
+      "DESCRIPTION": "团队旅游签注",
+      "STATUS": "1",
+      "QZLXList": [
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "团队游"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M2T",
+          "DESCRIPTION": "3个月二次",
+          "STATUS": "1",
+          "REMARK": "团队游"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG1Y1T",
+          "DESCRIPTION": "1年一次",
+          "STATUS": "1",
+          "REMARK": "团队游"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG1Y2T",
+          "DESCRIPTION": "1年二次",
+          "STATUS": "1",
+          "REMARK": "团队游"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "团队游"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC1Y1T",
+          "DESCRIPTION": "1年一次",
+          "STATUS": "1",
+          "REMARK": "团队游"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "102",
+      "CODE": "13",
+      "DESCRIPTION": "商务签注",
+      "STATUS": "1",
+      "QZLXList": [
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "商务"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M9T",
+          "DESCRIPTION": "3个月多次",
+          "STATUS": "1",
+          "REMARK": "商务"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG1Y9T",
+          "DESCRIPTION": "1年多次",
+          "STATUS": "1",
+          "REMARK": "商务"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "商务"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC3M9T",
+          "DESCRIPTION": "3个月多次",
+          "STATUS": "1",
+          "REMARK": "商务"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC1Y9T",
+          "DESCRIPTION": "1年多次",
+          "STATUS": "1",
+          "REMARK": "商务"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "102",
+      "CODE": "19",
+      "DESCRIPTION": "其他签注",
+      "STATUS": "1",
+      "QZLXList": [
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "其它"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M2T",
+          "DESCRIPTION": "3个月二次",
+          "STATUS": "1",
+          "REMARK": "其它"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M9T",
+          "DESCRIPTION": "3个月多次",
+          "STATUS": "1",
+          "REMARK": "其它"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "其它"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC3M2T",
+          "DESCRIPTION": "3个月二次",
+          "STATUS": "1",
+          "REMARK": "其它"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC3M9T",
+          "DESCRIPTION": "3个月多次",
+          "STATUS": "1",
+          "REMARK": "其它"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "102",
+      "CODE": "1B",
+      "DESCRIPTION": "个人旅游签注",
+      "STATUS": "1",
+      "QZLXList": [
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "个人游"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG3M2T",
+          "DESCRIPTION": "3个月二次",
+          "STATUS": "1",
+          "REMARK": "个人游"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG1Y1T",
+          "DESCRIPTION": "1年一次",
+          "STATUS": "1",
+          "REMARK": "个人游"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG1Y2T",
+          "DESCRIPTION": "1年二次",
+          "STATUS": "1",
+          "REMARK": "个人游"
+        },
+        {
+          "QWD": "HKG",
+          "CODE": "HKG1Y9T",
+          "DESCRIPTION": "1年多次",
+          "STATUS": "1",
+          "REMARK": "个人游"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC3M1T",
+          "DESCRIPTION": "3个月一次",
+          "STATUS": "1",
+          "REMARK": "个人游"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC1Y1T",
+          "DESCRIPTION": "1年一次",
+          "STATUS": "1",
+          "REMARK": "个人游"
+        }
+      ],
+      "REMARK": "香港澳门"
+    },
+    {
+      "SQLB": "104",
+      "CODE": "23",
+      "DESCRIPTION": "赴台定居",
+      "STATUS": "2",
+      "QZLXList": [
+        {
+          "QWD": "TWN",
+          "CODE": "TWN6M1T",
+          "DESCRIPTION": "6个月一次",
+          "STATUS": "1",
+          "REMARK": "赴台定居"
+        },
+        {
+          "QWD": "TWN",
+          "CODE": "TWN1Y9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "赴台定居"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "104",
+      "CODE": "25",
+      "DESCRIPTION": "赴台团队旅游",
+      "STATUS": "2",
+      "QZLXList": [
+        {
+          "QWD": "TWN",
+          "CODE": "TWN6M1T",
+          "DESCRIPTION": "6个月一次",
+          "STATUS": "1",
+          "REMARK": "赴台团队旅游"
+        },
+        {
+          "QWD": "TWN",
+          "CODE": "TWN1Y9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "赴台团队旅游"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "104",
+      "CODE": "26",
+      "DESCRIPTION": "赴台乘务",
+      "STATUS": "2",
+      "QZLXList": [
+        {
+          "QWD": "TWN",
+          "CODE": "TWN6M1T",
+          "DESCRIPTION": "6个月一次",
+          "STATUS": "1",
+          "REMARK": "赴台乘务"
+        },
+        {
+          "QWD": "TWN",
+          "CODE": "TWN1Y9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "赴台乘务"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "102",
+      "CODE": "1G",
+      "DESCRIPTION": "逗留签注",
+      "STATUS": "1",
+      "QZLXList": [
+        {
+          "QWD": "HKG",
+          "CODE": "HKG1Y9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "逗留"
+        },
+        {
+          "QWD": "MAC",
+          "CODE": "MAC1Y9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "逗留"
+        }
+      ],
+      "REMARK": null
+    },
+    {
+      "SQLB": "104",
+      "CODE": "2A",
+      "DESCRIPTION": "赴台学习",
+      "STATUS": "2",
+      "QZLXList": [
+        {
+          "QWD": "TWN",
+          "CODE": "TWN6M1T",
+          "DESCRIPTION": "6个月一次",
+          "STATUS": "1",
+          "REMARK": "赴台就学"
+        },
+        {
+          "QWD": "TWN",
+          "CODE": "TWN9T",
+          "DESCRIPTION": "多次有效",
+          "STATUS": "1",
+          "REMARK": "赴台就学"
+        }
+      ],
+      "REMARK": null
+    }
+  ],
+  "SignalMarker": 0,
+  "PrintqzStata": 0,
+  "FucID": null,
+  "IsSucceed": true,
+  "IsException": false
+}

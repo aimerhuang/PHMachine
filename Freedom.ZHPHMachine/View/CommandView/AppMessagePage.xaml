@@ -1,0 +1,43 @@
+﻿<Page x:Class="Freedom.ZHPHMachine.View.CommandView.AppMessagePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Freedom.ZHPHMachine.View.CommandView"
+      mc:Ignorable="d" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="AppMessagePage">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding DoInit}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Border Background="White"  Width="1685">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="120"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Background="#6499F7">
+                        <TextBlock Text="系统消息" HorizontalAlignment="Center" FontSize="48" FontWeight="Bold"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Margin="50" FontWeight="Bold" FontSize="42" TextWrapping="Wrap" TextAlignment="Justify"  Text="{Binding AppMessageInfo}" Foreground="#333333"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="2" >
+                        <Button   Style="{StaticResource NextButtonStyle}" Width="400" Height="80" Command="{Binding DoNext}" Visibility="{Binding ButtonVisibility}" Content="{Binding ButtonContent}"></Button>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

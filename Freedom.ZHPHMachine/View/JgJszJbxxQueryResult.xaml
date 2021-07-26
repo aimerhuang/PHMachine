@@ -1,0 +1,134 @@
+﻿<Page x:Class="SFreedom.ZHPHMachine.ViewModels.JgJszJbxxQueryResult"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:my="clr-namespace:Freedom.Controls;assembly=Freedom.Controls"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:vm="clr-namespace:SFreedom.ZHPHMachine.ViewModels"
+      mc:Ignorable="d"  
+      Title="JgJszJbxxQueryResult">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" Width="1080">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="240,0,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Freedom.Controls;component/images/font-367.png"></Image>
+                    <TextBlock  Text="预约基本信息" Style="{StaticResource TopTitleMessageStyle}"></TextBlock>
+                </StackPanel>
+            </Grid>
+            <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,20,0,0" BorderBrush="#c9ced1" BorderThickness="2" Width="730" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect Color="#030000" Opacity="0.08" Direction="120" ShadowDepth="2" BlurRadius="2"></DropShadowEffect>
+                </Border.Effect>
+                <Grid Margin="40,15,40,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--<Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="10"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition Width="400"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Background="#CCCCCC" Height="1" />
+                        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Orientation="Horizontal">
+                            <Image Source="/Freedom.Controls;component/Images/titleBg.png" HorizontalAlignment="Left" Width="5" Height="20" Margin="0,0,10,0"></Image>
+                            <TextBlock FontSize="24" FontWeight="Light" Margin="0,0,0,5" Foreground="#418de2">基本信息</TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                            <TextBlock FontSize="20" Foreground="#767777" VerticalAlignment="Center"><Run Text="姓名："  FontSize="20"></Run></TextBlock>
+                            <TextBlock Style="{StaticResource ConfirmInfoStyle}" VerticalAlignment="Center">
+                                 <Run Text="{Binding BaseInfo.ZWXM}" Foreground="Red" FontSize="20"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                            <TextBlock FontSize="20" Foreground="#767777" VerticalAlignment="Center"><Run Text="性别："  FontSize="20"></Run></TextBlock>
+                            <TextBlock Style="{StaticResource ConfirmInfoStyle}" VerticalAlignment="Center">
+                                 <Run Text="{Binding BaseInfo.XB, Converter={StaticResource sexValueConverter}, ConverterParameter=1}" Foreground="Red" FontSize="20"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" Grid.ColumnSpan="2">
+                            <TextBlock FontSize="20" Foreground="#767777" VerticalAlignment="Center"><Run Text="身份证号："  FontSize="20"></Run></TextBlock>
+                            <TextBlock Style="{StaticResource ConfirmInfoStyle}" VerticalAlignment="Center">
+                                 <Run Text="{Binding BaseInfo.SFZH, Converter={StaticResource desIdCardValueConverter}, ConverterParameter=3}" Foreground="Red" FontSize="20"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                            <TextBlock FontSize="20" Foreground="#767777" VerticalAlignment="Center"><Run Text="联系电话："  FontSize="20"></Run></TextBlock>
+                            <TextBlock Style="{StaticResource ConfirmInfoStyle}" VerticalAlignment="Center">
+                                 <Run Text="{Binding BaseInfo.LXDH}" Foreground="Red" FontSize="20"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="10"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition Width="400"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Background="#CCCCCC" Height="1" />
+                        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Orientation="Horizontal">
+                            <Image Source="/Freedom.Controls;component/Images/titleBg.png" HorizontalAlignment="Left" Width="5" Height="20" Margin="0,0,10,0"></Image>
+                            <TextBlock FontSize="24" FontWeight="Light" Margin="0,0,0,5" Foreground="#418de2">预约信息</TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                            <TextBlock FontSize="20" Foreground="#767777" VerticalAlignment="Center"><Run Text="预约日期："  FontSize="20"></Run></TextBlock>
+                            <TextBlock Style="{StaticResource ConfirmInfoStyle}" VerticalAlignment="Center">
+                                 <Run Text="{Binding BaseInfo.WSYYRQ}" Foreground="Red" FontSize="20"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                            <TextBlock FontSize="20" Foreground="#767777" VerticalAlignment="Center"><Run Text="预约类型："  FontSize="20"></Run></TextBlock>
+                            <TextBlock Style="{StaticResource ConfirmInfoStyle}" VerticalAlignment="Center">
+                                 <Run Text="{Binding BaseInfo.SQLB}" Foreground="Red" FontSize="20"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" Grid.ColumnSpan="2">
+                            <TextBlock FontSize="20" Foreground="#767777" VerticalAlignment="Center"><Run Text="预约时间："  FontSize="20"></Run></TextBlock>
+                            <TextBlock Style="{StaticResource ConfirmInfoStyle}" VerticalAlignment="Center">
+                                 <Run Text="{Binding BaseInfo.WSYYSJ}" Foreground="Red" FontSize="20"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>-->
+
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="1" VerticalAlignment="Top" Width="1080">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <my:ImageButton  Command="{Binding DoExit}" Style="{StaticResource ButtonCancelStyle}">返回首页</my:ImageButton>
+            <StackPanel HorizontalAlignment="Right" Margin="0,0,100,0" Orientation="Horizontal" Grid.Column="1">
+                <my:ImageButton  Command="{Binding DoNext}" CommandParameter="ScanningPhotoReceipt" 
+                                 Visibility="{Binding IsException,Converter={StaticResource boolToVisibilityConverter},ConverterParameter=invert}"
+                                 Style="{StaticResource ButtonNextStyle}" Content="{Binding NextButtonName}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

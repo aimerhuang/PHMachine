@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Freedom.ZHPHMachine"
+                    xmlns:converter="clr-namespace:Freedom.ZHPHMachine.Converters">
+    <converter:SexValueConverter x:Key="sexValueConverter"></converter:SexValueConverter>
+    <converter:DateValueConverter x:Key="dateValueConverter"></converter:DateValueConverter>
+    <converter:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"></converter:BoolToVisibilityConverter>
+    <converter:CardTypeToVisibilityConverter x:Key="CardTypeToVisibilityConverter"></converter:CardTypeToVisibilityConverter>
+    <converter:DESIdCardValueConverter x:Key="desIdCardValueConverter"></converter:DESIdCardValueConverter>
+    <converter:MultiBoolToVisibilityConverter x:Key="multiBoolToVisibilityConverter"></converter:MultiBoolToVisibilityConverter>
+    <converter:InSpaceBoolToVisibilityConverter x:Key="InSpaceBoolToVisibilityConverter"></converter:InSpaceBoolToVisibilityConverter>
+
+</ResourceDictionary>

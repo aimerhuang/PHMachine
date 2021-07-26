@@ -1,0 +1,54 @@
+2020-04-21 17:30:54,937[15]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 17:30:54,939[15]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 17:30:55,015[15]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 17:34:11,847[16]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 17:34:11,866[16]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 17:34:11,937[16]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 17:45:24,380[15]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 17:45:24,383[15]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 17:45:24,579[15]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 17:46:31,001[19]DEBUGInfoLog[(null)]-[运维平台]设备告警开始入库
+2020-04-21 17:46:31,010[19]DEBUGInfoLog[(null)]-[运维平台]入库参数：{"DeviceID":"1138","AlarmTypeID":"21","AlarmInfo":"打印派号单回执发生异常：打印word派号单发生异常：正在中止线程。","AlarmTitle":"打印派号单回执发生异常：打印word派号单发生异常：正在中止线程。","AlarmCode":"20000005"}
+2020-04-21 17:46:31,146[19]DEBUGInfoLog[(null)]-[运维平台]入库成功
+2020-04-21 17:50:14,886[15]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 17:50:14,888[15]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 17:50:15,005[15]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 17:53:08,030[15]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 17:53:08,035[15]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 17:53:08,153[15]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 18:00:52,682[15]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 18:00:52,684[15]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 18:00:52,764[15]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 18:04:01,751[16]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 18:04:01,751[16]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 18:04:01,752[16]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 18:09:13,974[16]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 18:09:13,979[16]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 18:09:14,029[16]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 18:22:37,782[15]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 18:22:37,784[15]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 18:22:37,879[15]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 18:24:22,405[12]DEBUGInfoLog[(null)]-[运维平台]设备告警开始入库
+2020-04-21 18:24:22,405[12]DEBUGInfoLog[(null)]-[运维平台]入库参数：{"DeviceID":"1138","AlarmTypeID":"21","AlarmInfo":"预约数据保存失败：提交失败：[办证类别]不能为空，请重新填写！","AlarmTitle":"预约数据保存失败：提交失败：[办证类别]不能为空，请重新填写！","AlarmCode":"20000002"}
+2020-04-21 18:24:22,485[12]DEBUGInfoLog[(null)]-[运维平台]入库成功
+2020-04-21 18:29:23,693[15]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 18:29:23,694[15]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 18:29:23,745[15]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 18:31:04,864[15]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 18:31:04,866[15]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 18:31:04,973[15]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 18:31:58,254[22]DEBUGInfoLog[(null)]-[运维平台]设备告警开始入库
+2020-04-21 18:31:58,261[22]DEBUGInfoLog[(null)]-[运维平台]入库参数：{"DeviceID":"1138","AlarmTypeID":"21","AlarmInfo":"打印派号单回执发生异常：打印word派号单发生异常：正在中止线程。","AlarmTitle":"打印派号单回执发生异常：打印word派号单发生异常：正在中止线程。","AlarmCode":"20000005"}
+2020-04-21 18:31:58,458[22]DEBUGInfoLog[(null)]-[运维平台]入库成功
+2020-04-21 18:32:02,887[10]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 18:32:02,904[10]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 18:32:02,905[10]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 18:32:35,049[21]DEBUGInfoLog[(null)]-[运维平台]设备告警开始入库
+2020-04-21 18:32:35,063[21]DEBUGInfoLog[(null)]-[运维平台]入库参数：{"DeviceID":"1138","AlarmTypeID":"21","AlarmInfo":"打印派号单回执发生异常：打印word派号单发生异常：正在中止线程。","AlarmTitle":"打印派号单回执发生异常：打印word派号单发生异常：正在中止线程。","AlarmCode":"20000005"}
+2020-04-21 18:32:35,138[21]DEBUGInfoLog[(null)]-[运维平台]入库成功
+2020-04-21 18:33:36,026[15]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 18:33:36,029[15]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 18:33:36,120[15]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN
+2020-04-21 18:35:38,838[16]DEBUGInfoLog[(null)]-姓名：杨若男    长度：3
+2020-04-21 18:35:38,839[16]DEBUGInfoLog[(null)]-获取到中文姓：杨  中文名：若男
+2020-04-21 18:35:38,977[16]DEBUGInfoLog[(null)]-获取到拼音姓：YANG  拼音名：RENAN,RUONAN

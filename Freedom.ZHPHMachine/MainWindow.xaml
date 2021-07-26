@@ -1,0 +1,163 @@
+﻿<Window x:Class="Freedom.ZHPHMachine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:View="clr-namespace:Freedom.ZHPHMachine.View" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Freedom.ZHPHMachine" Icon="SelfServiceTerminalsSystem.ico"
+        xmlns:xly="clr-namespace:Freedom.ZHPHMachine.Themes"
+        xmlns:control="clr-namespace:Freedom.Controls;assembly=Freedom.Controls" 
+        xmlns:my="clr-namespace:Freedom.Controls;assembly=Freedom.Controls"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        mc:Ignorable="d"  x:Name="win"
+        Style="{StaticResource TransparentWindowStyle}" 
+        ResizeMode ="NoResize"
+         
+        Title="智慧预约系统" 
+        Height="1080" Width="1920" 
+        KeyDown="WinMain_KeyDown" Loaded="win_Loaded">
+    <!--WindowStartupLocation="CenterScreen"  WindowState="Maximized"-->
+    <Grid>
+        <Grid.Background>
+            <!--<ImageBrush ImageSource="D:\项目\智慧大厅新\Bin\ApplicationData\Skin\bg.png"/>-->
+            <ImageBrush ImageSource="{Binding WinBrshImage}"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="129*"/>
+            <RowDefinition Height="862*"/>
+            <RowDefinition Height="33*"/>
+        </Grid.RowDefinitions>
+        <!--加载提示"-->
+        <control:LoadingWait BlProActive="{Binding IsBusy}" ProForeground="{StaticResource HSForeground}"
+                             Visibility="{Binding IsBusy,Converter={StaticResource boolToVisibilityConverter}}"
+                             LoadMsgInfo="{Binding LoadWatingMsg}" Grid.Row="1" Grid.RowSpan="2" 
+                             FontFamily="{StaticResource FontFamily}"/>
+
+
+        <Grid x:Name="content" Grid.Row="1" Margin="118,0" Visibility="{Binding IsBusy,Converter={StaticResource boolToVisibilityConverter},ConverterParameter=invert}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!--导航样式-->
+            <Grid>
+            </Grid>
+            <!--内容提示区-->
+            <Grid Grid.Row="1" Background="{StaticResource TipBackground}">
+                <TextBlock Grid.Row="1" x:Name="txtTip" Text="{Binding TipMessage}"
+                           Visibility="{Binding TipMessage,Converter={StaticResource boolToVisibilityConverter}}"
+                           HorizontalAlignment="Center" FontSize="48" Padding="10"/>
+            </Grid>
+            <!--内容-->
+            <Frame x:Name="Frame" Grid.Row="2" NavigationUIVisibility="Hidden" 
+                   Source="{Binding MainTraget,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                   ContentRendered="Frame_ContentRendered" Visibility="{Binding IsMessage,Converter={StaticResource boolToVisibilityConverter},ConverterParameter=invert}"
+                   Navigating="Frame_Navigating"/>
+            <!--消息提示-->
+            <View:MessageControl  Grid.Row="1" Grid.RowSpan="2" Visibility="{Binding IsMessage,Converter={StaticResource boolToVisibilityConverter}}" Margin="0,0,0,100"/>
+            <!--底部按钮-->
+            <Grid Grid.Row="3" Visibility="{Binding ElementName=Frame,Path=Visibility}">
+                <Button Content="退出办理" Style="{StaticResource ExitButtonStyle}" 
+                        HorizontalAlignment="Left" Margin="0,30"  Command="{Binding DoExit}" 
+                        xly:ControlAttachProperty.FIcon="&#xe668;">
+                    <Button.Visibility>
+                        <MultiBinding Converter="{StaticResource multiBoolToVisibilityConverter}">
+                            <Binding Path="Visibility" ElementName="txtTip"/>
+                            <Binding Path="HomeShow"/>
+                        </MultiBinding>
+                    </Button.Visibility>
+                </Button>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnBack" Content="上一步" Style="{StaticResource LastButtonStyle}" 
+                            HorizontalAlignment="Left" Margin="50,30" Command="{Binding DoBack}"
+                             xly:ControlAttachProperty.FIcon="&#xe620;"
+                            Visibility="{Binding PreviousPageShow}" Click="BtnBack_Click"/>
+                    <Button x:Name="BtnNext"  Content="确认无误" Style="{StaticResource NextButtonStyle}" 
+                            HorizontalAlignment="Left" Margin="0,30" Command="{Binding DoNext}"  
+                            xly:ControlAttachProperty.FIcon="&#xe621;"
+                            Visibility="{Binding NextPageShow}" Click="BtnNext_Click" MouseDoubleClick="BtnNext_MouseDoubleClick" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <!--头部样式-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="398"/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource ButtonStyle}" Background="Transparent"  Click="Button_Click" >
+                <Button.Content>
+                    <Image Source="Images/LOGO.png" Height="94" Margin="80,0,30,0" HorizontalAlignment="Right" />
+                </Button.Content>
+            </Button>
+
+            <ItemsControl Grid.Column="1" ItemsSource="{Binding Title}"
+                          FontSize="63" VerticalAlignment="Center" IsHitTestVisible="False">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="2">
+                            <ContentPresenter Content="{Binding}">
+                                <ContentPresenter.Resources>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="FontFamily" Value="{StaticResource FontFamily}"/>
+                                        <Setter Property="Foreground" Value="{StaticResource HSForeground}"/>
+                                    </Style>
+                                </ContentPresenter.Resources>
+                            </ContentPresenter>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <!--计时器-->
+            <Button Grid.Column="2" Style="{StaticResource ButtonStyle}" Background="Transparent" Click="Button_Click_1">
+                <Button.Content>
+                    <TextBlock x:Name="timer"  HorizontalAlignment="Right" FontSize="62" Margin="80,0"   
+                       IsHitTestVisible="False">
+                        <TextBlock.Visibility>
+                            <MultiBinding Converter="{StaticResource multiBoolToVisibilityConverter}">
+                                <Binding Path="Visibility" ElementName="txtTip"/>
+                                <Binding Path="Visibility" ElementName="content"/>
+                                <Binding Path="Visibility" ElementName="Frame"/>
+                                <Binding Path="ContentViewModel.StrCountdownValue" Converter="{StaticResource boolToVisibilityConverter}"/>
+                            </MultiBinding>
+                        </TextBlock.Visibility>
+                <Run>剩余:</Run>
+                <Run Text="{Binding ContentViewModel.StrCountdownValue}"/>
+                <Run>秒</Run>
+                    </TextBlock>
+                </Button.Content>
+            </Button>
+        </Grid>
+        <!--底部样式-->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Margin="10,0">
+                <Run Text="设备名称:"/>
+                <Run Text="{Binding DeviceName}"/>
+            </TextBlock>
+            <TextBlock Margin="10,0">
+                <Run Text="版本号:"/>
+                <Run Text="{Binding VersionNumber,Mode=OneWay}"/>
+            </TextBlock>
+            <TextBlock Margin="10,0">
+                <Run Text="服务热线："/>
+                <Run Text="{Binding AdvisoryTelephone}"/>
+            </TextBlock>
+            <TextBlock Margin="10,0">
+                <Run Text="{Binding HomeCurrDate}"/>
+                <Run Text="{Binding HomeCurrWeek}"/>
+                <Run Text="{Binding HomeCurrTime}"/>
+            </TextBlock>
+        </StackPanel>
+      
+    </Grid>
+</Window>
+

@@ -1,0 +1,525 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:my="clr-namespace:Freedom.Controls;assembly=Freedom.Controls"
+      xmlns:local="clr-namespace:Freedom.ZHPHMachine.View"
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+      xmlns:converter="clr-namespace:Freedom.ZHPHMachine.Converters"
+      xmlns:Control="clr-namespace:Freedom.ZHPHMachine.Themes.Control" 
+      x:Class="Freedom.ZHPHMachine.View.BookingInfo"
+      xmlns:xly="clr-namespace:Freedom.ZHPHMachine.Themes"
+      mc:Ignorable="d"  
+      Title="BookingTarget" Loaded="Page_Loaded">
+    <Page.Resources>
+        <converter:QWDConverter x:Key="QWDConverter"/>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockStyle}">
+            <Setter Property="IsHitTestVisible" Value="False"/>
+        </Style>
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="Foreground" Value="{StaticResource HSForeground2}"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="IsHitTestVisible" Value="False"/>
+        </Style>
+        <Style TargetType="{x:Type ListBox}">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Background" Value="{StaticResource TipBackground}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}" CornerRadius="5" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <ContentPresenter Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <DataTrigger Binding="{Binding Path=Test}" Value="test">
+                                <Setter Property="Visibility" Value="Visible"></Setter>
+                            </DataTrigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource HSTipForeground}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Opacity" Value="0.8" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Opacity" Value="0.5" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="PassportNoteShow" TargetType="{x:Type StackPanel}">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding HZBookingInfo.ApplyType.Code}" Value="93">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="TQInfoShow" TargetType="UniformGrid">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=gridHK,Path=Visibility}" Value="Visible"/>
+                        <Condition Binding="{Binding GABookingInfo.YYQZLIST[0].QZType.Code}" Value="11"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Visibility" Value="Visible"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=gridMC,Path=Visibility}" Value="Visible"/>
+                        <Condition Binding="{Binding GABookingInfo.YYQZLIST[1].QZType.Code}" Value="11"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Visibility" Value="Visible"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="HKShow" TargetType="Grid">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding GABookingInfo.YYQZLIST[0].IsUse}" Value="true">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="MACShow" TargetType="Grid">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding GABookingInfo.YYQZLIST[1].IsUse}" Value="true">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="TWNShow" TargetType="StackPanel">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding TWBookingInfo.YYQZLIST[0].IsUse}" Value="true">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid Margin="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="0,10">
+            <TextBlock Text="&#xe656;" Style="{StaticResource FIcon}" 
+                       Foreground="{Binding ElementName=tip,Path=Foreground}"
+                       FontSize="{Binding ElementName=tip,Path=FontSize}" Margin="5,0"/>
+            <TextBlock x:Name="tip" Foreground="{StaticResource HSForeground3}">
+                <Run Text="温馨提示："/>
+                <Run Text="以下内容必须严格按照户口本信息填写"/>
+            </TextBlock>
+        </StackPanel>
+        <TabControl x:Name="tbc" Grid.Row="1" Style="{StaticResource RightTabControl}" Loaded="TabControl_Loaded">
+            <TabItem Header="普通护照" Visibility="{Binding HZBookingInfo,Converter={StaticResource boolToVisibilityConverter}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Width="229" Source="/Freedom.ZHPHMachine;component/Themes/Resources/Image/hz.png"
+                           Margin="83,50" VerticalAlignment="Top"/>
+                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="50,10,50,10">
+                        <TextBlock Text="普通护照" Foreground="{StaticResource HSTipForeground}" FontSize="24" Margin="10,5,5,5"/>
+                        <Border x:Name="Border" Style="{StaticResource Border2Style}" Visibility="{Binding HZBookingInfo.XCZJHM,Converter={StaticResource boolToVisibilityConverter}}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="现持证件号：" Margin="10,0"/>
+                                <TextBlock Text="{Binding HZBookingInfo.XCZJHM}"/>
+                                <TextBlock Text="有效期至：" Margin="10,0"/>
+                                <TextBlock Text="{Binding HZBookingInfo.XCZJYXQZ,Converter={StaticResource dateValueConverter}}"/>
+                                <TextBlock Name="HZZJZT" Text="{Binding HZBookingInfo.DJSY}" Margin="30,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="0,10,0,0"
+                                Command="{Binding CJSYCommand}" CommandParameter="2">
+                            <Button.Content>
+                                <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="出境事由："
+                                         Text="{Binding HZBookingInfo.CJSYDescription.Description}"  
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="0,10,0,0"
+                                Command="{Binding QwdCommand}" CommandParameter="1">
+                            <Button.Content>
+                                <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="   前往地："
+                                         Text="{Binding HZBookingInfo.QwdDescription.Description}"  
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}"/>
+                            </Button.Content>
+                        </Button>
+                        <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="0,10,0,0"
+                                Command="{Binding TextBoxGotFocusCommand}" CommandParameter="1">
+                            <Button.Content>
+                                <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="办证类别："
+                                         Text="{Binding HZBookingInfo.ApplyType.Description}"  
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}"/>
+                            </Button.Content>
+                        </Button>
+
+                        
+                        <StackPanel Margin="5" Orientation="Vertical" Style="{StaticResource PassportNoteShow}">
+                            <TextBlock Text="加注事由"  FontSize="24" Margin="5"/>
+                            <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding HandwritingCommand}" CommandParameter="曾用名">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="曾用名："
+                                         Text="{Binding HZBookingInfo.YYJZBLLIST[0].BGJZXM}"  
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding HandwritingCommand}" CommandParameter="姓名">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="姓名："
+                                         Text="{Binding HZBookingInfo.YYJZBLLIST[1].BGJZXM}"  
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding NumberKeyboardCommand}" CommandParameter="曾持照加注">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="曾持照加注："
+                                         Text="{Binding HZBookingInfo.YYJZBLLIST[2].BGJZXM}"  
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}"/>
+                                </Button.Content>
+                            </Button>
+
+
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="往来港澳通行证" Visibility="{Binding GABookingInfo,Converter={StaticResource boolToVisibilityConverter}}">
+                <Grid VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="50,10">
+                        <TextBlock Text="往来港澳通行证" Foreground="{StaticResource HSTipForeground}" FontSize="24" Margin="10,5,5,5"/>
+                        <Border Background="{StaticResource btnBackground}" Padding="10" CornerRadius="20" 
+                                Margin="5"   Visibility="{Binding GABookingInfo.XCZJHM,Converter={StaticResource boolToVisibilityConverter}}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="现持证件号：" Margin="10,0"/>
+                                <TextBlock Text="{Binding GABookingInfo.XCZJHM}"/>
+                                <TextBlock Text="有效期至：" Margin="10,0"/>
+                                <TextBlock Text="{Binding GABookingInfo.XCZJYXQZ,Converter={StaticResource dateValueConverter}}"/>
+                                <TextBlock Name="GAZJZT" Text="{Binding GABookingInfo.DJSY}" Margin="30,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <TextBlock Text="申请类型"  FontSize="24" Margin="10,5,5,5"/>
+                        <Border Background="{StaticResource btnDullBackground}" Padding="10" CornerRadius="20" 
+                                Margin="5,5,5,50" >
+                            <UniformGrid  Rows="1" Columns="3">
+                                <RadioButton x:Name="raall" Style="{StaticResource RadioButtonStyleTwo}" Content="通行证和签注" Loaded="RadioButton_Loaded" Command="{Binding SQOpCommand}" CommandParameter="0"  Margin="2" HorizontalAlignment="Center"/>
+                                <RadioButton x:Name="raqz" Style="{StaticResource RadioButtonStyleTwo}" Content="仅签注" Loaded="RadioButton_Loaded" Command="{Binding SQOpCommand}" CommandParameter="1"  Margin="2" HorizontalAlignment="Center"
+                                             IsEnabled="{Binding GABookingInfo.IsQZShow}"/>
+                                <RadioButton x:Name="ratxz" Style="{StaticResource RadioButtonStyleTwo}" Content="仅通行证" Loaded="RadioButton_Loaded" Command="{Binding SQOpCommand}" CommandParameter="2"  Margin="2" HorizontalAlignment="Center"/>
+                            </UniformGrid>
+                        </Border>
+                        <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding TextBoxGotFocusCommand}" CommandParameter="2">
+                            <Button.Content>
+                                <TextBox Name="GATxt" Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="办证类别："
+                                         Text="{Binding GABookingInfo.ApplyType.Description}"
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}" TextChanged="GATxt_TextChanged"/>
+                            </Button.Content>
+                        </Button>
+                        <Grid x:Name="gridHK" Style="{StaticResource HKShow}">
+                            <Button  Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding SelectGACommand}">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="香港签注：" 
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}">
+                                        <TextBox.Text>
+                                            <MultiBinding StringFormat="{}{0}  {1}">
+                                                <Binding Path="GABookingInfo.YYQZLIST[0].QZType.Description" />
+                                                <Binding Path="GABookingInfo.YYQZLIST[0].QZCount.Description" />
+                                            </MultiBinding>
+                                        </TextBox.Text>
+                                    </TextBox>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
+                        <Grid x:Name="gridMC" Style="{StaticResource MACShow}">
+                            <Button  Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding SelectGACommand}">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="澳门签注：" 
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}">
+                                        <TextBox.Text>
+                                            <MultiBinding StringFormat="{}{0}  {1}">
+                                                <Binding Path="GABookingInfo.YYQZLIST[1].QZType.Description" />
+                                                <Binding Path="GABookingInfo.YYQZLIST[1].QZCount.Description" />
+                                            </MultiBinding>
+                                        </TextBox.Text>
+                                    </TextBox>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <Image Width="229" Source="/Freedom.ZHPHMachine;component/Themes/Resources/Image/hkg.png"
+                           Margin="83,10" VerticalAlignment="Top"/>
+
+                        <UniformGrid Rows="3" Columns="2" Style="{StaticResource TQInfoShow}" Width="500">
+                            <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding HandwritingCommand}" CommandParameter="港澳亲属姓名">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Watermark="港澳亲属姓名"
+                                             Text="{Binding GABookingInfo.GAQSZWXM}"
+                                              MinWidth="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}">
+
+                                    </TextBox>
+                                </Button.Content>
+                            </Button>
+                            <Border Background="{StaticResource btnDullBackground}" Padding="10" CornerRadius="20" 
+                                Margin="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="性别:"/>
+                                    <RadioButton x:Name="ra1" Content="男" Margin="10,0" Loaded="RadioButton_Loaded_1" Click="Ra1_Click"/>
+                                    <RadioButton x:Name="ra2" Content="女" Margin="10,0" Loaded="RadioButton_Loaded_1" Click="Ra1_Click"/>
+                                </StackPanel>
+                            </Border>
+                            <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding NumberKeyboardCommand}" CommandParameter="港澳身份证号码">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Watermark="港澳身份证号码"
+                                             Text="{Binding GABookingInfo.GAQSSFZHM}"
+                                             MinWidth="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}">
+
+                                    </TextBox>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding RelationCommand}">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Watermark="与申请人关系" 
+                                             Text="{Binding GABookingInfo.RelationType.Description}" 
+                                         MinWidth="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                             Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}">
+                                    </TextBox>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding NumberKeyboardCommand}" CommandParameter="旅行证件号码">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Watermark="旅行证件号码"
+                                             Text="{Binding GABookingInfo.GAJMLWNDTXHM}" 
+                                             MinWidth="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}">
+
+                                    </TextBox>
+                                </Button.Content>
+                            </Button>
+                        </UniformGrid>
+
+                        <!--<UniformGrid Rows="1" Columns="2">
+                            <GroupBox Header="香港签注" Margin="5" Visibility="{Binding ElementName=txtHK,Path=Visibility}">
+                                <ListBox ItemsSource="{Binding GABookingInfo.YYQZLIST[0].QZCountLst}" DisplayMemberPath="Description" 
+                                         SelectedValue="{Binding GABookingInfo.YYQZLIST[0].QZCount,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"/>
+                            </GroupBox>
+                            <GroupBox Header="澳门签注" Margin="5" Visibility="{Binding ElementName=txtMC,Path=Visibility}">
+                                <ListBox ItemsSource="{Binding GABookingInfo.YYQZLIST[1].QZCountLst}"  DisplayMemberPath="Description" 
+                                         SelectedValue="{Binding GABookingInfo.YYQZLIST[1].QZCount}"/>
+                            </GroupBox>
+                        </UniformGrid>-->
+                    </StackPanel>
+                </Grid>
+                <!--<Grid HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="3" Visibility="{Binding GABookingInfo.XCZJHM,Converter={StaticResource boolToVisibilityConverter}}">
+                        <TextBlock Text="现持证件号："/>
+                        <TextBlock Text="{Binding GABookingInfo.XCZJHM}"/>
+                        <TextBlock Text="有效期至："/>
+                        <TextBlock Text="{Binding GABookingInfo.XCZJYXQZ,Converter={StaticResource dateValueConverter}}"/>
+                    </StackPanel>
+                    <Image Grid.Row="3" Grid.RowSpan="3" 
+                                   Source="/Freedom.ZHPHMachine;component/Themes/Resources/Image/hkg.png" 
+                                   Width="83" Margin="5"/>
+                    <TextBlock Grid.Row="1" Text="申请类型："/>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                        <RadioButton x:Name="raall" Content="通行证和签注" Loaded="RadioButton_Loaded" Command="{Binding SQOpCommand}" CommandParameter="0" Checked="Raall_Checked"/>
+                        <RadioButton x:Name="raqz"  Content="仅签注" Loaded="RadioButton_Loaded" Command="{Binding SQOpCommand}" CommandParameter="1" Checked="Raall_Checked"/>
+                        <RadioButton x:Name="ratxz" Content="仅通行证" Loaded="RadioButton_Loaded" Command="{Binding SQOpCommand}" CommandParameter="2" Checked="Raall_Checked"/>
+                    </StackPanel>
+                    <TextBlock Grid.Row="2" Text="前往地："/>
+                    <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                        <RadioButton x:Name="ra1" Content="香港+澳门"  Command="{Binding GAQWDCommand}" CommandParameter="GA" Loaded="RadioButton_Loaded" Checked="Raall_Checked"/>
+                        <RadioButton x:Name="ra2" Content="香港" Command="{Binding GAQWDCommand}" CommandParameter="HK" Loaded="RadioButton_Loaded" Checked="Raall_Checked"/>
+                        <RadioButton x:Name="ra3" Content="澳门" Command="{Binding GAQWDCommand}" CommandParameter="MC" Loaded="RadioButton_Loaded" Checked="Raall_Checked"/>
+                    </StackPanel>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="办证类别："/>
+                    <Button  Grid.Row="3" Grid.Column="2" Style="{StaticResource ButtonStyle}" Command="{Binding TextBoxGotFocusCommand}" CommandParameter="2">
+                        <Button.Content>
+                            <TextBox Style="{StaticResource NoFocusTextBox}" 
+                                     Text="{Binding GABookingInfo.ApplyType.Description}"
+                                     Foreground="{StaticResource HSForeground2}"/>
+                        </Button.Content>
+                    </Button>
+                    <TextBlock x:Name="txtHK"  Grid.Row="4" Grid.Column="1" Text="香港签注" Visibility="Collapsed"/>
+                    <Button Grid.Row="4" Grid.Column="2" Command="{Binding ApplyCommand}" CommandParameter="1021"
+                             Visibility="{Binding ElementName=txtHK,Path=Visibility}" Style="{StaticResource ButtonStyle}">
+                        <Button.Content>
+                            <TextBox Style="{StaticResource NoFocusTextBox}"
+                                     Text="{Binding GABookingInfo.YYQZLIST[0].QZType.Description}"
+                                     Foreground="{StaticResource HSForeground2}"/>
+                        </Button.Content>
+                    </Button>
+                    <TextBlock x:Name="txtMC" Grid.Row="5" Grid.Column="1" Text="澳门签注：" Visibility="Collapsed"/>
+                    <Button  Grid.Row="5" Grid.Column="2"  Command="{Binding ApplyCommand}" CommandParameter="1022"
+                              Visibility="{Binding ElementName=txtMC,Path=Visibility}" Style="{StaticResource ButtonStyle}">
+                        <Button.Content>
+                            <TextBox Style="{StaticResource NoFocusTextBox}"
+                                     Text="{Binding GABookingInfo.YYQZLIST[1].QZType.Description}"
+                                     Foreground="{StaticResource HSForeground2}"/>
+                        </Button.Content>
+                    </Button>
+                    <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="3">
+                        <GroupBox Header="香港签注" Margin="5" Visibility="{Binding ElementName=txtHK,Path=Visibility}" 
+                                  Foreground="{StaticResource HSForeground2}">
+                            <ListBox ItemsSource="{Binding GABookingInfo.YYQZLIST[0].QZCountLst}" DisplayMemberPath="Description" 
+                                         SelectedItem="{Binding GABookingInfo.YYQZLIST[0].QZCount}" SelectedIndex="0"/>
+                        </GroupBox>
+                        <GroupBox Header="澳门签注" Margin="5" Visibility="{Binding ElementName=txtMC,Path=Visibility}"
+                                  Foreground="{StaticResource HSForeground2}">
+                            <ListBox ItemsSource="{Binding GABookingInfo.YYQZLIST[1].QZCountLst}"  DisplayMemberPath="Description" 
+                                         SelectedItem="{Binding GABookingInfo.YYQZLIST[1].QZCount}" SelectedIndex="0"/>
+                        </GroupBox>
+                    </StackPanel>
+                </Grid>-->
+            </TabItem>
+            <TabItem Header="往来台湾通行证" Visibility="{Binding TWBookingInfo,Converter={StaticResource boolToVisibilityConverter}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Width="229" Source="/Freedom.ZHPHMachine;component/Themes/Resources/Image/twn.png"
+                           Margin="83,50" VerticalAlignment="Top"/>
+                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="50">
+                        <TextBlock Text="往来台湾通行证" Foreground="{StaticResource HSTipForeground}" FontSize="24" Margin="10,5,5,5"/>
+                        <Border Background="{StaticResource btnBackground}" Padding="10" CornerRadius="20" 
+                                Margin="5" Visibility="{Binding TWBookingInfo.XCZJHM,Converter={StaticResource boolToVisibilityConverter}}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="现持证件号：" Margin="10,0"/>
+                                <TextBlock Text="{Binding TWBookingInfo.XCZJHM}" />
+                                <TextBlock Text="有效期至：" Margin="10,0"/>
+                                <TextBlock Text="{Binding TWBookingInfo.XCZJYXQZ,Converter={StaticResource dateValueConverter}}" />
+                                <TextBlock Name="TWZJZT" Text="{Binding TWBookingInfo.DJSY}" Margin="30,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <TextBlock Text="申请类型"  FontSize="24" Margin="10,5,5,5"/>
+                        <Border Background="{StaticResource btnDullBackground}" Padding="10" CornerRadius="20" 
+                                Margin="5,5,5,50">
+                            <UniformGrid  Rows="1" Columns="3">
+                                <RadioButton x:Name="raallt" Style="{StaticResource RadioButtonStyleTwo}" Content="通行证和签注"  Margin="2" HorizontalAlignment="Center" 
+                                             Loaded="Raallt_Loaded"
+                                             Command="{Binding SQOpTWNCommand}" CommandParameter="0"/>
+                                <RadioButton x:Name="raqzt" Style="{StaticResource RadioButtonStyleTwo}" Content="仅签注"  Margin="2" HorizontalAlignment="Center"
+                                             Loaded="Raallt_Loaded" IsEnabled="{Binding TWBookingInfo.IsQZShow}"
+                                             Command="{Binding SQOpTWNCommand}" CommandParameter="1"/>
+                                <RadioButton x:Name="ratxzt" Style="{StaticResource RadioButtonStyleTwo}" Content="仅通行证"  Margin="2" HorizontalAlignment="Center"
+                                             Loaded="Raallt_Loaded" Command="{Binding SQOpTWNCommand}" CommandParameter="2"/>
+                            </UniformGrid>
+                        </Border>
+                        <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding TextBoxGotFocusCommand}" CommandParameter="3">
+                            <Button.Content>
+                                <TextBox Name="TWTxt" Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="办证类别："
+                                         Text="{Binding TWBookingInfo.ApplyType.Description}" 
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}" TextChanged="TWTxt_TextChanged"/>
+                            </Button.Content>
+                        </Button>
+                        <StackPanel Orientation="Vertical" Style="{StaticResource TWNShow}">
+                            <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding ApplyCommand}" CommandParameter="104">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="申请事由："
+                                         Text="{Binding TWBookingInfo.YYQZLIST[0].QZType.Description}"
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}"/>
+                                </Button.Content>
+                            </Button>
+                            <Button Style="{StaticResource ButtonStyle}" MinHeight="50" Margin="5"
+                                Command="{Binding QZTypeCommand}" CommandParameter="904">
+                                <Button.Content>
+                                    <TextBox Style="{StaticResource LableTextBox}" IsHitTestVisible="False"
+                                         xly:ControlAttachProperty.Label="签注种类："
+                                         Text="{Binding TWBookingInfo.YYQZLIST[0].QZCount.Description}"
+                                         Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualWidth}"
+                                         Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=ActualHeight}"/>
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Page>

@@ -1,0 +1,101 @@
+﻿<Window x:Class="Freedom.ZHPHMachine.View.NumKeyboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Freedom.ZHPHMachine.View"
+        xmlns:xly="clr-namespace:Freedom.ZHPHMachine.Themes" 
+        xmlns:my="clr-namespace:Freedom.Controls;assembly=Freedom.Controls" 
+        mc:Ignorable="d" Height="770" Width="800" 
+        Style="{StaticResource TransparentWindowStyle}"
+        WindowStartupLocation="CenterOwner" x:Name="win" ShowInTaskbar="False">
+    <Window.Resources>
+        <Style x:Key="KeyboardStyle" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="{StaticResource HSForeground}"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Background" Value="{StaticResource btnNormalBackground}"/> 
+            <Setter Property="Height" Value="81"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border SnapsToDevicePixels="True" Background="{TemplateBinding Background}" 
+                              Height="{TemplateBinding Height}"
+                              Width="{TemplateBinding Width}" CornerRadius="{StaticResource CornerRadius}">
+                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!--<Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkBlue" />
+                            </Trigger>-->
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" Value="0.7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style> 
+    </Window.Resources>
+    <Border Background="{StaticResource ContentBackground}" CornerRadius="50">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="46" Padding="20" Margin="10" Foreground="{StaticResource HSForeground5}" />
+
+            <Grid Grid.Row="1" Background="{StaticResource DialogBackground}" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="txt" Style="{StaticResource DefaultTextBox}"  Width="600" Height="85" HorizontalAlignment="Center" 
+                         Text="{Binding Content,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"
+                         Margin="10,10,0,10" FontSize="40" Loaded="Txt_Loaded"/> 
+                </StackPanel>
+                <TextBlock Grid.Row="1" Text="{Binding TipsMsg,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}" FontSize="35" 
+                           Foreground="OrangeRed" HorizontalAlignment="Center" FontStyle="Italic"/>
+                <UniformGrid  Grid.Row="2" Rows="4" Columns="3" Margin="220,10">
+                    <Button Content="1" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>
+                    <Button Content="2" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>
+                    <Button Content="3" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>
+                    <Button Content="4" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>
+                    <Button Content="5" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>
+                    <Button Content="6" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>
+                    <Button Content="7" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>
+                    <Button Content="8" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>
+                    <Button Content="9" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>
+                    <Button x:Name="delete"  Content="←" Style="{StaticResource KeyboardStyle}" 
+                            Click="Delete_Click"/>
+                    <Button Content="0" Style="{StaticResource KeyboardStyle}"  Click="Button_Click_1"/>  
+                    <Button x:Name="empty"  Content="清空" Style="{StaticResource KeyboardStyle}"  
+                            Background="{StaticResource btnHighlightBackground}" Click="Empty_Click"/>
+                </UniformGrid> 
+            </Grid>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource ButtonStyle}" xly:ControlAttachProperty.FIcon="&#xe620;" 
+                        Content="返回" Background="{StaticResource btnBackground}" 
+                        Foreground="{StaticResource HSDullForeground}"  
+                        FontSize="24" Width="160" Margin="5,10" Click="Button_Click" TouchDown="Button_TouchDown"/>
+                <Button Style="{StaticResource ButtonStyle}" xly:ControlAttachProperty.FIcon="&#xe621;"  
+                        Content="确认" Background="{StaticResource btnNormalBackground}"  
+                        FontSize="24" Width="160" Margin="30,10" Command="{Binding OKCommand}" CommandParameter="{Binding ElementName=win}"/>
+            </StackPanel> 
+        </Grid>
+    </Border>
+</Window>

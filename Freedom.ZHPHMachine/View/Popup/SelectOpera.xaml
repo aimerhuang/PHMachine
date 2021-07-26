@@ -1,0 +1,125 @@
+﻿<Window x:Class="Freedom.ZHPHMachine.View.SelectOpera"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Freedom.ZHPHMachine.View"
+        xmlns:xly="clr-namespace:Freedom.ZHPHMachine.Themes"
+        xmlns:my="clr-namespace:Freedom.Controls;assembly=Freedom.Controls" 
+        Style="{StaticResource TransparentWindowStyle}" 
+        mc:Ignorable="d" Height="700" Width="850" ShowInTaskbar="False"  
+     
+        WindowStartupLocation="CenterOwner" x:Name="win">
+    <Window.Resources>
+        <Style x:Key="SelectTemplate" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Background" Value="{StaticResource TipBackground}"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Height" Value="68"/>
+            <Setter Property="Foreground" Value="{StaticResource HSForeground}"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontFamily}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="IsEnabled" Value="{Binding Value.Item2}"/> 
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Grid>
+                            <Border CornerRadius="5" BorderThickness="1" Margin="5,5,5,0" 
+                                Background="{TemplateBinding Background}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                <ContentPresenter IsEnabled="{TemplateBinding IsEnabled}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="FontFamily" Value="{StaticResource FontFamily}"/>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
+                            </Border>
+                            <TextBlock Text="{Binding Value.Item3}" Foreground="Red" VerticalAlignment="Center" 
+                                       HorizontalAlignment="Right" Margin="0,0,50,0"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Selector.IsSelected" Value="True">
+                                <Setter Property="Background" Value="{StaticResource HSTipForeground}"/> 
+                            </Trigger>
+                            <Trigger Property="UIElement.IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#C0C0C0"/>
+                                <Setter Property="Foreground" Value="#666666"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border Background="{StaticResource ContentBackground}" 
+            CornerRadius="{StaticResource CornerRadius}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <!--标题-->
+            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Foreground="{StaticResource HSForeground5}" FontSize="46" Margin="10"/>
+            <!--内容-->
+            <Grid Grid.Row="1" Background="{StaticResource DialogBackground}" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource ButtonStyle}" Margin="20"
+                        Background="#679BF4 " Width="160" Command="{Binding DoBack}" FontSize="24"
+                        Visibility="{Binding PreviousShow,Converter={StaticResource boolToVisibilityConverter}}"
+                        IsEnabled="{Binding PreviousEnabled}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="&#xe62a;" Style="{StaticResource FIcon}" FontSize="30"/>
+                            <TextBlock Text="上一页" 
+                                       FontSize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=FontSize}"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+
+                <Grid Grid.Column="1" Margin="10">
+                    <ListBox x:Name="lst" ItemContainerStyle="{StaticResource SelectTemplate}" SnapsToDevicePixels="True" 
+                         ItemsSource="{Binding ItemsInfo}" SelectedValue="{Binding Item,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}"  
+                         DisplayMemberPath="Key" SelectedValuePath="Value" Background="Transparent" BorderThickness="0"  
+                         HorizontalContentAlignment="Center" >
+                    </ListBox> <!--SelectedValue="{Binding Item,Mode=TwoWay}"-->
+                    <!--<Button Grid.Column="1" Height="50" VerticalAlignment="Bottom" Margin="5" Content="返回" FontSize="24" Foreground="Yellow" Background="#00BFFF"  
+                            Click="Button_Click_1" TouchDown="Button_Click_1"/>-->
+                </Grid>
+                <Button Grid.Column="2" Style="{StaticResource ButtonStyle}" Margin="20"
+                        Background="#679BF4 " Width="160"  Command="{Binding DoNext}" FontSize="24"
+                        Visibility="{Binding NextShow,Converter={StaticResource boolToVisibilityConverter}}" 
+                        IsEnabled="{Binding NextEnabled}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="下一页"
+                                       FontSize="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}},Path=FontSize}"/>
+                            <TextBlock Text="&#xe62b;" Style="{StaticResource FIcon}"
+                                       FontSize="30"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </Grid>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource ButtonStyle}" xly:ControlAttachProperty.FIcon="&#xe620;" 
+                        Content="返回" Background="{StaticResource btnBackground}" 
+                        Foreground="{StaticResource HSDullForeground}"  
+                        FontSize="24" Width="160" Margin="5,10"  Click="Button_Click_1"/>
+                <Button Style="{StaticResource ButtonStyle}" xly:ControlAttachProperty.FIcon="&#xe621;"  
+                        Content="确认" Background="{StaticResource btnNormalBackground}"  
+                        FontSize="24" Width="160" Margin="30,10" Click="Button_Click_2" />
+            </StackPanel> 
+        </Grid>
+    </Border>
+</Window>

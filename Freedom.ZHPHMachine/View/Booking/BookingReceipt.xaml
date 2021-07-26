@@ -1,0 +1,51 @@
+﻿<Page x:Class="Freedom.ZHPHMachine.View.Booking.BookingReceipt"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Freedom.ZHPHMachine.View.Booking"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      mc:Ignorable="d" 
+      Title="BookingReceipt">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!--<TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="28" HorizontalAlignment="Center" Margin="20">
+            
+            <Run Text=" 请将您的二维码对准扫描口进行扫描" Foreground="{StaticResource HSTipForeground}"/>
+
+        </TextBlock>-->
+        <!--<TextBlock Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" HorizontalAlignment="Center" Text="若您未携带有效制证照片，请移步拍照机免费拍照再取号。" 
+                   Margin="5" FontSize="30" Foreground="{StaticResource HSForeground1}"/>-->
+
+        <Image Grid.Row="2" Grid.Column="0" x:Name="GifImage"
+                   gif:ImageBehavior.AnimatedSource="/Freedom.ZHPHMachine;component/Themes/Resources/Image/spr.gif"
+                   Height="500" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0,0,50,0"/>
+
+        <Border Grid.Column="0" Grid.Row="2" Width="343" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                Margin="200,250,10,10" CornerRadius="{StaticResource CornerRadius}" 
+                Background="{StaticResource TipBackground}" Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Freedom.ZHPHMachine;component/Themes/Resources/Image/TipIcon.png" Width="35" />
+                    <TextBlock Text="温馨提示：" FontSize="22" Margin="5"/>
+                </StackPanel>
+                <TextBlock Grid.Row="1" Text="请将您的手机智慧码对准扫描口进行扫描。"
+                           TextWrapping="Wrap" LineHeight="25" FontSize="25" VerticalAlignment="Top" Margin="0,5"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>

@@ -1,0 +1,893 @@
+{
+  "ExeResult": 0,
+  "MessageInfo": "",
+  "ReturnValue": [
+    {
+      "ID": 2361.0,
+      "KINDTYPE": "956",
+      "CODE": "101",
+      "DESCRIPTION": "护照",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2362.0,
+      "KINDTYPE": "956",
+      "CODE": "104",
+      "DESCRIPTION": "赴台",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2364.0,
+      "KINDTYPE": "956",
+      "CODE": "102",
+      "DESCRIPTION": "港澳",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2109.0,
+      "KINDTYPE": "916",
+      "CODE": "11",
+      "DESCRIPTION": "首次申请",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2111.0,
+      "KINDTYPE": "916",
+      "CODE": "13",
+      "DESCRIPTION": "失效重新申领",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2113.0,
+      "KINDTYPE": "916",
+      "CODE": "21",
+      "DESCRIPTION": "遗失补发",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2115.0,
+      "KINDTYPE": "916",
+      "CODE": "31",
+      "DESCRIPTION": "到期换发",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2125.0,
+      "KINDTYPE": "916",
+      "CODE": "93",
+      "DESCRIPTION": "持证申请加注",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2109.0,
+      "KINDTYPE": "916",
+      "CODE": "11",
+      "DESCRIPTION": "首次申请",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 2111.0,
+      "KINDTYPE": "916",
+      "CODE": "13",
+      "DESCRIPTION": "失效重新申领",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 2113.0,
+      "KINDTYPE": "916",
+      "CODE": "21",
+      "DESCRIPTION": "遗失补发",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 2115.0,
+      "KINDTYPE": "916",
+      "CODE": "31",
+      "DESCRIPTION": "到期换发",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 2124.0,
+      "KINDTYPE": "916",
+      "CODE": "92",
+      "DESCRIPTION": "持证申请签注",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 2109.0,
+      "KINDTYPE": "916",
+      "CODE": "11",
+      "DESCRIPTION": "首次申请",
+      "STATUS": "3",
+      "REMARK": null
+    },
+    {
+      "ID": 2111.0,
+      "KINDTYPE": "916",
+      "CODE": "13",
+      "DESCRIPTION": "失效重新申领",
+      "STATUS": "3",
+      "REMARK": null
+    },
+    {
+      "ID": 2113.0,
+      "KINDTYPE": "916",
+      "CODE": "21",
+      "DESCRIPTION": "遗失补发",
+      "STATUS": "3",
+      "REMARK": null
+    },
+    {
+      "ID": 2115.0,
+      "KINDTYPE": "916",
+      "CODE": "31",
+      "DESCRIPTION": "到期换发",
+      "STATUS": "3",
+      "REMARK": null
+    },
+    {
+      "ID": 2124.0,
+      "KINDTYPE": "916",
+      "CODE": "92",
+      "DESCRIPTION": "持证申请签注",
+      "STATUS": "3",
+      "REMARK": null
+    },
+    {
+      "ID": 1343.0,
+      "KINDTYPE": "105",
+      "CODE": "11",
+      "DESCRIPTION": "探亲签注",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 1344.0,
+      "KINDTYPE": "105",
+      "CODE": "857",
+      "DESCRIPTION": "团队旅游签注",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 1345.0,
+      "KINDTYPE": "105",
+      "CODE": "13",
+      "DESCRIPTION": "商务签注",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 1346.0,
+      "KINDTYPE": "105",
+      "CODE": "19",
+      "DESCRIPTION": "其他签注",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 1347.0,
+      "KINDTYPE": "105",
+      "CODE": "957",
+      "DESCRIPTION": "个人旅游签注",
+      "STATUS": "1",
+      "REMARK": "香港澳门"
+    },
+    {
+      "ID": 1351.0,
+      "KINDTYPE": "105",
+      "CODE": "1G",
+      "DESCRIPTION": "逗留签注",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 1339.0,
+      "KINDTYPE": "105",
+      "CODE": "27",
+      "DESCRIPTION": "赴台商务",
+      "STATUS": "2",
+      "REMARK": "赴台"
+    },
+    {
+      "ID": 1340.0,
+      "KINDTYPE": "105",
+      "CODE": "29",
+      "DESCRIPTION": "赴台其他",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 1341.0,
+      "KINDTYPE": "105",
+      "CODE": "21",
+      "DESCRIPTION": "赴台探亲",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 1342.0,
+      "KINDTYPE": "105",
+      "CODE": "22",
+      "DESCRIPTION": "赴台应邀",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 1348.0,
+      "KINDTYPE": "105",
+      "CODE": "23",
+      "DESCRIPTION": "赴台定居",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 1349.0,
+      "KINDTYPE": "105",
+      "CODE": "25",
+      "DESCRIPTION": "赴台团队旅游",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 1350.0,
+      "KINDTYPE": "105",
+      "CODE": "26",
+      "DESCRIPTION": "赴台乘务",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 1352.0,
+      "KINDTYPE": "105",
+      "CODE": "2A",
+      "DESCRIPTION": "赴台学习",
+      "STATUS": "2",
+      "REMARK": null
+    },
+    {
+      "ID": 2290.0,
+      "KINDTYPE": "909",
+      "CODE": "64",
+      "DESCRIPTION": "外祖母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2291.0,
+      "KINDTYPE": "909",
+      "CODE": "42",
+      "DESCRIPTION": "孙女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2292.0,
+      "KINDTYPE": "909",
+      "CODE": "46",
+      "DESCRIPTION": "孙女婿或外孙女婿",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2293.0,
+      "KINDTYPE": "909",
+      "CODE": "47",
+      "DESCRIPTION": "曾孙子或外曾孙子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2294.0,
+      "KINDTYPE": "909",
+      "CODE": "49",
+      "DESCRIPTION": "其它孙子，孙女或外孙子，外孙女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2295.0,
+      "KINDTYPE": "909",
+      "CODE": "51",
+      "DESCRIPTION": "父亲",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2296.0,
+      "KINDTYPE": "909",
+      "CODE": "53",
+      "DESCRIPTION": "公公",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2297.0,
+      "KINDTYPE": "909",
+      "CODE": "56",
+      "DESCRIPTION": "岳母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2298.0,
+      "KINDTYPE": "909",
+      "CODE": "52",
+      "DESCRIPTION": "母亲",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2299.0,
+      "KINDTYPE": "909",
+      "CODE": "24",
+      "DESCRIPTION": "三子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2300.0,
+      "KINDTYPE": "909",
+      "CODE": "25",
+      "DESCRIPTION": "四子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2301.0,
+      "KINDTYPE": "909",
+      "CODE": "26",
+      "DESCRIPTION": "五子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2302.0,
+      "KINDTYPE": "909",
+      "CODE": "28",
+      "DESCRIPTION": "女婿",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2303.0,
+      "KINDTYPE": "909",
+      "CODE": "97",
+      "DESCRIPTION": "其他亲属",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2304.0,
+      "KINDTYPE": "909",
+      "CODE": "21",
+      "DESCRIPTION": "独生子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2305.0,
+      "KINDTYPE": "909",
+      "CODE": "22",
+      "DESCRIPTION": "长子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2306.0,
+      "KINDTYPE": "909",
+      "CODE": "99",
+      "DESCRIPTION": "非亲属",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2307.0,
+      "KINDTYPE": "909",
+      "CODE": "12",
+      "DESCRIPTION": "妻",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2308.0,
+      "KINDTYPE": "909",
+      "CODE": "23",
+      "DESCRIPTION": "次子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2309.0,
+      "KINDTYPE": "909",
+      "CODE": "73",
+      "DESCRIPTION": "弟",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2310.0,
+      "KINDTYPE": "909",
+      "CODE": "75",
+      "DESCRIPTION": "姐姐",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2311.0,
+      "KINDTYPE": "909",
+      "CODE": "79",
+      "DESCRIPTION": "其它兄弟姐妹",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2312.0,
+      "KINDTYPE": "909",
+      "CODE": "33",
+      "DESCRIPTION": "二女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2313.0,
+      "KINDTYPE": "909",
+      "CODE": "34",
+      "DESCRIPTION": "三女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2314.0,
+      "KINDTYPE": "909",
+      "CODE": "36",
+      "DESCRIPTION": "五女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2315.0,
+      "KINDTYPE": "909",
+      "CODE": "39",
+      "DESCRIPTION": "其它女儿",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2316.0,
+      "KINDTYPE": "909",
+      "CODE": "59",
+      "DESCRIPTION": "已故父或母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2317.0,
+      "KINDTYPE": "909",
+      "CODE": "61",
+      "DESCRIPTION": "祖父",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2318.0,
+      "KINDTYPE": "909",
+      "CODE": "63",
+      "DESCRIPTION": "外祖父",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2319.0,
+      "KINDTYPE": "909",
+      "CODE": "67",
+      "DESCRIPTION": "曾祖母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2320.0,
+      "KINDTYPE": "909",
+      "CODE": "68",
+      "DESCRIPTION": "配偶的曾祖父母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2321.0,
+      "KINDTYPE": "909",
+      "CODE": "69",
+      "DESCRIPTION": "其它祖父母或外祖父母关系",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2322.0,
+      "KINDTYPE": "909",
+      "CODE": "38",
+      "DESCRIPTION": "儿媳",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2323.0,
+      "KINDTYPE": "909",
+      "CODE": "43",
+      "DESCRIPTION": "外孙子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2324.0,
+      "KINDTYPE": "909",
+      "CODE": "44",
+      "DESCRIPTION": "外孙女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2325.0,
+      "KINDTYPE": "909",
+      "CODE": "45",
+      "DESCRIPTION": "孙媳妇或外孙媳妇",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2326.0,
+      "KINDTYPE": "909",
+      "CODE": "48",
+      "DESCRIPTION": "曾孙女或外曾孙女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2327.0,
+      "KINDTYPE": "909",
+      "CODE": "57",
+      "DESCRIPTION": "继父或养父",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2328.0,
+      "KINDTYPE": "909",
+      "CODE": "58",
+      "DESCRIPTION": "继母或养母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2329.0,
+      "KINDTYPE": "909",
+      "CODE": "31",
+      "DESCRIPTION": "独生女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2330.0,
+      "KINDTYPE": "909",
+      "CODE": "54",
+      "DESCRIPTION": "婆婆",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2331.0,
+      "KINDTYPE": "909",
+      "CODE": "55",
+      "DESCRIPTION": "岳父",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2332.0,
+      "KINDTYPE": "909",
+      "CODE": "62",
+      "DESCRIPTION": "祖母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2333.0,
+      "KINDTYPE": "909",
+      "CODE": "65",
+      "DESCRIPTION": "配偶的祖父母或外祖父母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2334.0,
+      "KINDTYPE": "909",
+      "CODE": "66",
+      "DESCRIPTION": "曾祖父",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2335.0,
+      "KINDTYPE": "909",
+      "CODE": "71",
+      "DESCRIPTION": "兄",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2336.0,
+      "KINDTYPE": "909",
+      "CODE": "72",
+      "DESCRIPTION": "嫂",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2337.0,
+      "KINDTYPE": "909",
+      "CODE": "74",
+      "DESCRIPTION": "弟媳",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2338.0,
+      "KINDTYPE": "909",
+      "CODE": "76",
+      "DESCRIPTION": "姐夫",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2339.0,
+      "KINDTYPE": "909",
+      "CODE": "77",
+      "DESCRIPTION": "妹妹",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2340.0,
+      "KINDTYPE": "909",
+      "CODE": "78",
+      "DESCRIPTION": "妹夫",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2341.0,
+      "KINDTYPE": "909",
+      "CODE": "11",
+      "DESCRIPTION": "夫",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2342.0,
+      "KINDTYPE": "909",
+      "CODE": "98",
+      "DESCRIPTION": "保姆",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2343.0,
+      "KINDTYPE": "909",
+      "CODE": "41",
+      "DESCRIPTION": "孙子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2344.0,
+      "KINDTYPE": "909",
+      "CODE": "01",
+      "DESCRIPTION": "本人",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2345.0,
+      "KINDTYPE": "909",
+      "CODE": "02",
+      "DESCRIPTION": "户主",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2346.0,
+      "KINDTYPE": "909",
+      "CODE": "03",
+      "DESCRIPTION": "小集体户户主",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2347.0,
+      "KINDTYPE": "909",
+      "CODE": "10",
+      "DESCRIPTION": "配偶",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2348.0,
+      "KINDTYPE": "909",
+      "CODE": "20",
+      "DESCRIPTION": "子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2349.0,
+      "KINDTYPE": "909",
+      "CODE": "27",
+      "DESCRIPTION": "养子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2350.0,
+      "KINDTYPE": "909",
+      "CODE": "30",
+      "DESCRIPTION": "女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2351.0,
+      "KINDTYPE": "909",
+      "CODE": "37",
+      "DESCRIPTION": "养女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2352.0,
+      "KINDTYPE": "909",
+      "CODE": "40",
+      "DESCRIPTION": "孙子，孙女或外孙子，外孙女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2353.0,
+      "KINDTYPE": "909",
+      "CODE": "50",
+      "DESCRIPTION": "父母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2354.0,
+      "KINDTYPE": "909",
+      "CODE": "60",
+      "DESCRIPTION": "祖父母或外祖父母",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2355.0,
+      "KINDTYPE": "909",
+      "CODE": "70",
+      "DESCRIPTION": "兄弟姐妹",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2356.0,
+      "KINDTYPE": "909",
+      "CODE": "35",
+      "DESCRIPTION": "四女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2357.0,
+      "KINDTYPE": "909",
+      "CODE": "29",
+      "DESCRIPTION": "其它子",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 2358.0,
+      "KINDTYPE": "909",
+      "CODE": "32",
+      "DESCRIPTION": "长女",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 6502.0,
+      "KINDTYPE": "904",
+      "CODE": "MEX",
+      "DESCRIPTION": "墨西哥",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 6320.0,
+      "KINDTYPE": "904",
+      "CODE": "CHN",
+      "DESCRIPTION": "中国",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 6494.0,
+      "KINDTYPE": "904",
+      "CODE": "ZWE",
+      "DESCRIPTION": "津巴布韦",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 6493.0,
+      "KINDTYPE": "904",
+      "CODE": "ZMB",
+      "DESCRIPTION": "赞比亚",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 6484.0,
+      "KINDTYPE": "904",
+      "CODE": "VNM",
+      "DESCRIPTION": "越南",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 6474.0,
+      "KINDTYPE": "904",
+      "CODE": "TUR",
+      "DESCRIPTION": "土耳其",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 6477.0,
+      "KINDTYPE": "904",
+      "CODE": "USA",
+      "DESCRIPTION": "美国",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 6479.0,
+      "KINDTYPE": "103",
+      "CODE": "20",
+      "DESCRIPTION": "农民",
+      "STATUS": "1",
+      "REMARK": null
+    },
+    {
+      "ID": 6478.0,
+      "KINDTYPE": "102",
+      "CODE": "10",
+      "DESCRIPTION": "探亲",
+      "STATUS": "1",
+      "REMARK": null
+    }
+  ],
+  "SignalMarker": 0,
+  "PrintqzStata": 0,
+  "FucID": null,
+  "IsSucceed": true,
+  "IsException": false
+}
+
+

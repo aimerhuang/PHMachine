@@ -1,0 +1,33 @@
+﻿<Page x:Class="Freedom.ZHPHMachine.View.BookingComplete"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Freedom.ZHPHMachine.View"
+      mc:Ignorable="d"  
+      Title="BookingComplete">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/Freedom.Controls;component/Images/Icon/iconchecked.png" 
+               Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="50,100"/>
+        <TextBlock FontSize="35" Margin="50,100" TextWrapping="Wrap" Grid.Column="1" VerticalAlignment="Top" 
+                   HorizontalAlignment="Left" LineHeight="50"
+                   Foreground="{StaticResource HSForeground3}">
+            <Run Text="尊敬的"/>
+            <Run Text="{Binding BookingBaseInfo.CardInfo.FullName}" /><LineBreak/>
+            <Run Text="您本次的业务："/>
+            <Run Text="{Binding BookingBaseInfo.StrCardTypes}"/><LineBreak/>
+            <Run Text="编号："/>
+            <Run Text="{Binding BookingBaseInfo.StrBookingNo}"/><LineBreak/>
+            <Run Text="请在"/>
+            <Run Text="{Binding BookingBaseInfo.BookingTarget.BookingDate,Converter={StaticResource dateValueConverter}}" />
+            <Run Text="{Binding BookingBaseInfo.BookingTarget.Title,Mode=OneWay}" />
+            <Run Text="前来办证大厅(" />
+            <Run Text="{Binding DWName,Mode=OneWay}" />
+            <Run Text=")自助办理相关业务，谢谢!"/>
+        </TextBlock>
+    </Grid>
+</Page>

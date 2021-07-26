@@ -1,0 +1,28 @@
+{
+  "ExeResult": 0,
+  "MessageInfo": "",
+  "ReturnValue": [
+    {
+      "BOOKING_BEGINTIM": "08:00",
+      "BOOKING_ENDTIME": "21:00",
+      "SUM": 100,
+      "CURRENT_COUNT": 1,
+      "STATUS": "0",
+      "QYCODE": "440300_0035",
+      "SLDW": "440300000000",
+      "CREATE_DATE": "2019-10-08 16:06:17",
+      "CREATE_USER": "system",
+      "UPDATE_DATE": "2019-10-08 17:57:53",
+      "UPDATE_USER": "594",
+      "REMARK": null,
+      "ID": 5233.0,
+      "DATASOURCES": "TEST",
+      "YYRQ": "20191008"
+    }
+  ],
+  "SignalMarker": 0,
+  "PrintqzStata": 0,
+  "FucID": null,
+  "IsSucceed": true,
+  "IsException": false
+}

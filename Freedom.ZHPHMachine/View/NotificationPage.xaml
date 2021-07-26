@@ -1,0 +1,23 @@
+﻿<Page x:Class="Freedom.ZHPHMachine.View.NotificationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Freedom.ZHPHMachine.View"
+      mc:Ignorable="d"  
+      Title="NotificationPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--内容提示区-->
+        <Grid Background="{StaticResource TipBackground}">
+            <TextBlock Text="温馨提示" HorizontalAlignment="Center" FontSize="70" Padding="10"/>
+        </Grid>
+        <TextBlock Text="设备暂停中" HorizontalAlignment="Center" x:Name="Block"
+                   VerticalAlignment="Center" FontSize="120" 
+                   Foreground="{StaticResource HSForeground1}" Margin="0,40,0,76" Grid.Row="1" Loaded="Block_OnLoaded"/>
+    </Grid>
+</Page>

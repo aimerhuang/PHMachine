@@ -1,0 +1,106 @@
+﻿<Window x:Class="Freedom.ZHPHMachine.View.Popup.HandwritingInput"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Freedom.ZHPHMachine.View.Popup"
+        xmlns:xly="clr-namespace:Freedom.ZHPHMachine.Themes"
+        Style="{StaticResource TransparentWindowStyle}" 
+        mc:Ignorable="d" Height="700" Width="1125" ShowInTaskbar="False"   
+        WindowStartupLocation="CenterOwner" x:Name="win">
+    <Window.Resources>
+        <Style x:Key="btnKeyboard" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+            <Setter Property="Background" Value="{StaticResource TipBackground}"/>
+            <Setter Property="MinWidth" Value="50"/>
+            <Setter Property="MinHeight" Value="50"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <Style x:Key="btnStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+            <Setter Property="Background" Value="{StaticResource TipBackground}"/>
+            <Setter Property="MinWidth" Value="102"/>
+            <Setter Property="MinHeight" Value="50"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+    </Window.Resources>
+    <Border Background="{StaticResource ContentBackground}" CornerRadius="50">
+        <Grid FocusManager.FocusedElement="{Binding ElementName=inputbox}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="tb" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="46" Padding="20" Margin="10" Foreground="{StaticResource HSForeground5}" />
+            <Grid Grid.Row="1" Background="{StaticResource DialogBackground}" Margin="20" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <UniformGrid  Rows="5" Columns="3">
+                        <Button Content="1" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="2" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="3" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="4" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="5" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="6" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="7" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="8" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="9" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="0" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="~" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="座" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="号" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="栋" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                        <Button Content="路" Style="{StaticResource btnKeyboard}" Click="Button_Click_4"/>
+                    </UniformGrid>
+                    <UniformGrid Rows="5" Columns="1">
+                        <Button Content="手写完成" Style="{StaticResource btnStyle}" Click="Button_Click_3"/>
+                        <Button Content="切换英文" Style="{StaticResource btnStyle}"/>
+                        <Button Content="复制/粘贴" Style="{StaticResource btnStyle}"/>
+                        <Button Content="退格" Style="{StaticResource btnStyle}" Click="Button_Click_5"/>
+                        <Button Content="清除" Style="{StaticResource btnStyle}" Click="Button_Click_2"/>
+                    </UniformGrid>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
+                    <Button Content="手写确认" Style="{StaticResource btnStyle}" Click="Button_Click"/>
+                    <Button Content="重写" Style="{StaticResource btnStyle}" Click="Button_Click_1"/>
+                    <Button Content="启动拼音" Style="{StaticResource btnStyle}"/>
+                    <Button Content="关闭拼音" Style="{StaticResource btnStyle}"/>
+                </StackPanel>
+                <Grid Grid.RowSpan="2" FocusManager.FocusedElement="{Binding ElementName=txt}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="txt"  Style="{StaticResource DefaultTextBox}" 
+                         Height="75" Margin="10"/>
+                    <TextBlock x:Name="txtTip" Grid.Row="1" FontSize="35" 
+                           Foreground="OrangeRed" HorizontalAlignment="Center" FontStyle="Italic"/>
+                    <InkCanvas Grid.Row="2" Name="inkInput" Margin="10"  
+                           StrokeCollected="inkInput_StrokeCollected" Focusable="False">
+                        <TextBlock Text="请在此手写区域手写完成点击确认按钮" Foreground="#D8D8D8 " FontSize="24" 
+                                   Margin="5" IsHitTestVisible="False"/>
+                    </InkCanvas>
+                </Grid>
+            </Grid>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource ButtonStyle}" xly:ControlAttachProperty.FIcon="&#xe620;" 
+                        Content="返回" Background="{StaticResource btnNBackground}" 
+                        Foreground="{StaticResource HSDullForeground}"  
+                        FontSize="24" Width="160" Margin="5,10" Click="Button_Click_6"/>
+                <Button Style="{StaticResource ButtonStyle}" xly:ControlAttachProperty.FIcon="&#xe621;"  
+                        Content="确认" Background="{StaticResource btnNormalBackground}"  
+                        FontSize="24" Width="160" Margin="30,10" Click="Button_Click_3"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

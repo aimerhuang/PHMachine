@@ -1,0 +1,133 @@
+﻿<Window x:Class="Freedom.ZHPHMachine.View.SelectProvince"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Freedom.ZHPHMachine.View"
+        xmlns:xly="clr-namespace:Freedom.ZHPHMachine.Themes"
+        xmlns:my="clr-namespace:Freedom.Controls;assembly=Freedom.Controls" 
+        mc:Ignorable="d" Height="900" Width="1000" 
+        Style="{StaticResource TransparentWindowStyle}"
+        WindowStartupLocation="CenterOwner" x:Name="win" ShowInTaskbar="False">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="ProvinceTemplate" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Background" Value="{StaticResource TipBackground}"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Height" Value="65"/>
+            <Setter Property="Width" Value="240"/>
+            <Setter Property="Foreground" Value="{StaticResource HSForeground}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="IsEnabled" Value="{Binding Value.Item2}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Grid>
+                            <Border CornerRadius="5" BorderThickness="1" Margin="5,5,5,0" 
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter IsEnabled="{TemplateBinding IsEnabled}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="5"/>
+                            </Border>
+                            <TextBlock Text="{Binding Value.Item3}" Foreground="Red" VerticalAlignment="Center" 
+                                       HorizontalAlignment="Right" Margin="0,0,50,0"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Selector.IsSelected" Value="True">
+                    <Setter Property="Background" Value="{StaticResource HSForeground3}"/>
+                </Trigger>
+                <Trigger Property="UIElement.IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#C0C0C0"/>
+                    <Setter Property="Foreground" Value="#666666"/>
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="ProvinceStyle" TargetType="{x:Type ListBox}">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ItemContainerStyle" Value="{StaticResource ProvinceTemplate}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid Background="{TemplateBinding Background}">
+                            <WrapPanel Orientation="Horizontal" IsItemsHost="True" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border Background="{StaticResource ContentBackground}" CornerRadius="50">
+        <Grid FocusManager.FocusedElement="{Binding ElementName=inputbox}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="46" Padding="20" Margin="10" Foreground="{StaticResource HSForeground5}" />
+            <Grid Grid.Row="1" Background="{StaticResource DialogBackground}" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="SelectCode" Cursor="Hand" PreviewMouseDown="TextBlock_PreviewMouseDown"  
+                           VerticalAlignment="Center" Foreground="{StaticResource HSForeground2}" >
+                    <Run Text="{Binding SelectProvince.DESCRIPTION}"/> 
+                    <Run Text="{Binding SelectCity.DESCRIPTION}"/>
+                    <Run Text="{Binding SelectArea.DESCRIPTION}"/>
+                </TextBlock>
+                <ListBox x:Name="lstArea" ItemsSource="{Binding SelectCity.CountryList}"  
+                         DisplayMemberPath="DESCRIPTION"  SelectedValue="{Binding SelectArea}"
+                         Style="{StaticResource ProvinceStyle}" Grid.Row="1">
+                    <ListBox.Visibility>
+                        <MultiBinding Converter="{StaticResource multiBoolToVisibilityConverter}" ConverterParameter="333">
+                            <Binding Path="SelectCity" Converter="{StaticResource boolToVisibilityConverter}"/>
+                            <Binding Path="SelectCity.CountryList" Converter="{StaticResource boolToVisibilityConverter}"/>
+                        </MultiBinding>
+                    </ListBox.Visibility>
+                </ListBox>
+                <ListBox  x:Name="lstCity"   
+                          ItemsSource="{Binding SelectProvince.CityList}" DisplayMemberPath="DESCRIPTION"
+                          Style="{StaticResource ProvinceStyle}" Grid.Row="1" SelectedValue="{Binding SelectCity}">
+                    <ListBox.Visibility>
+                        <MultiBinding Converter="{StaticResource multiBoolToVisibilityConverter}" ConverterParameter="222">
+                            <Binding Path="Visibility" ElementName="lstArea" Converter="{StaticResource boolToVisibilityConverter}" ConverterParameter="invert"/>
+                            <Binding Path="SelectProvince" Converter="{StaticResource boolToVisibilityConverter}"/>
+                        </MultiBinding>
+                    </ListBox.Visibility>
+                </ListBox>
+                <ListBox x:Name="lstProvince"  ItemsSource="{Binding ProvinceLst}" DisplayMemberPath="DESCRIPTION" 
+                         Style="{StaticResource ProvinceStyle}" Grid.Row="1" SelectedValue="{Binding SelectProvince}">
+                    <ListBox.Visibility>
+                        <MultiBinding Converter="{StaticResource multiBoolToVisibilityConverter}" ConverterParameter="111">
+                            <Binding Path="Visibility" ElementName="lstCity" Converter="{StaticResource boolToVisibilityConverter}" ConverterParameter="invert"/>
+                            <Binding Path="Visibility" ElementName="lstArea" Converter="{StaticResource boolToVisibilityConverter}" ConverterParameter="invert"/>
+                        </MultiBinding>
+                    </ListBox.Visibility>
+                </ListBox>
+            </Grid>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource ButtonStyle}" xly:ControlAttachProperty.FIcon="&#xe620;" 
+                        Content="返回" Background="{StaticResource btnBackground}" 
+                        Foreground="{StaticResource HSDullForeground}"  
+                        FontSize="24" Width="160" Margin="5,10"  Click="Button_Click"/>
+                <Button Style="{StaticResource ButtonStyle}" xly:ControlAttachProperty.FIcon="&#xe621;"  
+                        Content="确认" Background="{StaticResource btnNormalBackground}"  
+                        FontSize="24" Width="160" Margin="30,10" Click="Button_Click_2"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

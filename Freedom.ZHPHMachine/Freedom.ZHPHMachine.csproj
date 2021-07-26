@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3907274A-EEDD-4292-9505-CAC3173A22E5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Freedom.ZHPHMachine</RootNamespace>
+    <AssemblyName>Freedom.ZHPHMachine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SelfServiceTerminalsSystem.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words, Version=9.2.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="FirstFloor.ModernUI, Version=1.0.9.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.1.1345, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.1\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ink, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Microsoft.Ink.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Bin\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WpfAnimatedGif">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.18\lib\net\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Command\CommonHelper.cs" />
+    <Compile Include="Command\PingIp.cs" />
+    <Compile Include="Command\ElementManager.cs" />
+    <Compile Include="Command\Gloval.cs" />
+    <Compile Include="Command\PrintHelper.cs" />
+    <Compile Include="Command\ServiceRegistry.cs" />
+    <Compile Include="Command\TaiJiHelper.cs" />
+    <Compile Include="Command\ValidationHelper.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\CardTypeToVisibilityConverter.cs" />
+    <Compile Include="Converters\InSpaceBoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\MultiBoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\QWDConverter.cs" />
+    <Compile Include="Converters\DateValueConverter.cs" />
+    <Compile Include="Converters\DESIdCardValueConverter.cs" />
+    <Compile Include="Converters\SexValueConverter.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Themes\Control\MultiCheckBox.xaml.cs">
+      <DependentUpon>MultiCheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\Control\MultiRadioButton.xaml.cs">
+      <DependentUpon>MultiRadioButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\Core\ControlAttachProperty.cs" />
+    <Compile Include="TopMostTool.cs" />
+    <Compile Include="ViewModels\Booking\BookingAreaViewModels.cs" />
+    <Compile Include="ViewModels\Booking\BookingBaseInfoByBeijingViewModel.cs" />
+    <Compile Include="ViewModels\Booking\BookingBaseInfoByWuHanViewModel.cs" />
+    <Compile Include="ViewModels\Booking\BookingBaseInfoViewModels.cs" />
+    <Compile Include="ViewModels\Booking\BookingCompleteViewModels.cs" />
+    <Compile Include="ViewModels\Booking\BookingInfoViewModels.cs" />
+    <Compile Include="ViewModels\Booking\BookingReceiptViewModels.cs" />
+    <Compile Include="ViewModels\Booking\BookingTargetViewModels.cs" />
+    <Compile Include="ViewModels\CacheDataHelper.cs" />
+    <Compile Include="ViewModels\CommandViewModels\AppMessageToNextViewModels.cs" />
+    <Compile Include="ViewModels\CommandViewModels\AppMessageViewModels.cs" />
+    <Compile Include="ViewModels\NotificationPageViewModels.cs" />
+    <Compile Include="ViewModels\PasswordKeyboardViewModels.cs" />
+    <Compile Include="ViewModels\Popup\KeyBorderWindowViewModels.cs" />
+    <Compile Include="ViewModels\Popup\SelectDictionaryViewModels.cs" />
+    <Compile Include="ViewModels\Popup\SelectDicViewModels.cs" />
+    <Compile Include="ViewModels\Popup\SelectGAViewModels.cs" />
+    <Compile Include="ViewModels\SystemManagementViewModels.cs" />
+    <Compile Include="ViewModels\CheckPageViewModels.cs" />
+    <Compile Include="ViewModels\CommonHelper.cs" />
+    <Compile Include="ViewModels\MainPageViewModels.cs" />
+    <Compile Include="ViewModels\JgJszJbxxQueryResultViewModels.cs" />
+    <Compile Include="ViewModels\JgReadIDCardViewModels.cs" />
+    <Compile Include="ViewModels\MessagePageViewModels.cs" />
+    <Compile Include="ViewModels\Popup\SelectOperaViewModels.cs" />
+    <Compile Include="ViewModels\Popup\NumberKeyboardViewModels.cs" />
+    <Compile Include="ViewModels\Popup\SelectProvinceViewModels.cs" />
+    <Compile Include="ViewModels\ScanningPhotoReceiptViewModels.cs" />
+    <Compile Include="ViewModels\TipMsgResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipMsgResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\MainWindowViewModels.cs" />
+    <Compile Include="View\Booking\BookingArea.xaml.cs">
+      <DependentUpon>BookingArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Booking\BookingBaseInfoByBeijing.xaml.cs">
+      <DependentUpon>BookingBaseInfoByBeijing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Booking\BookingBaseInfoByWuHan.xaml.cs">
+      <DependentUpon>BookingBaseInfoByWuHan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Booking\BookingComplete.xaml.cs">
+      <DependentUpon>BookingComplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Booking\BookingInfo.xaml.cs">
+      <DependentUpon>BookingInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Booking\BookingBaseInfo.xaml.cs">
+      <DependentUpon>BookingBaseInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Booking\BookingReceipt.xaml.cs">
+      <DependentUpon>BookingReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Booking\BookingTarget.xaml.cs">
+      <DependentUpon>BookingTarget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CheckPage.xaml.cs">
+      <DependentUpon>CheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommandView\AppMessagePage.xaml.cs">
+      <DependentUpon>AppMessagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommandView\AppMessageToNextPage.xaml.cs">
+      <DependentUpon>AppMessageToNextPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BlankPage.xaml.cs">
+      <DependentUpon>BlankPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\JgJszJbxxQueryResult.xaml.cs">
+      <DependentUpon>JgJszJbxxQueryResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\JgReadIDCard.xaml.cs">
+      <DependentUpon>JgReadIDCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MessageControl.xaml.cs">
+      <DependentUpon>MessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NotificationPage.xaml.cs">
+      <DependentUpon>NotificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\HandwritingInput .xaml.cs">
+      <DependentUpon>HandwritingInput .xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\KeyBorderWindow.xaml.cs">
+      <DependentUpon>KeyBorderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\NumKeyboard.xaml.cs">
+      <DependentUpon>NumKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\NotificationWindow.xaml.cs">
+      <DependentUpon>NotificationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\SelectDic.xaml.cs">
+      <DependentUpon>SelectDic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\SelectDictionary.xaml.cs">
+      <DependentUpon>SelectDictionary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\SelectGA.xaml.cs">
+      <DependentUpon>SelectGA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\SelectProvince.xaml.cs">
+      <DependentUpon>SelectProvince.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\SelectOpera.xaml.cs">
+      <DependentUpon>SelectOpera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popup\NumberKeyboard.xaml.cs">
+      <DependentUpon>NumberKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ScanningPhotoReceipt.xaml.cs">
+      <DependentUpon>ScanningPhotoReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordKeyboardPage.xaml.cs">
+      <DependentUpon>PasswordKeyboardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SystemManagementPage.xaml.cs">
+      <DependentUpon>SystemManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BaseTheamDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Themes\BasicDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Themes\CheckBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Control\MultiCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Control\MultiRadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TabControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TextBlockStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TextBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\WindowStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Booking\BookingArea.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Booking\BookingBaseInfoByBeijing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Booking\BookingBaseInfoByWuHan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Booking\BookingComplete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Booking\BookingInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Booking\BookingBaseInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Booking\BookingReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Booking\BookingTarget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CheckPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CommandView\AppMessagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CommandView\AppMessageToNextPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BlankPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\JgJszJbxxQueryResult.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\JgReadIDCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="View\MessageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NotificationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Popup\HandwritingInput .xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Popup\KeyBorderWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Popup\NumKeyboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Popup\NotificationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Popup\SelectDic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Popup\SelectDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Popup\SelectGA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Popup\SelectProvince.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Popup\SelectOpera.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Popup\NumberKeyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ScanningPhotoReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PasswordKeyboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SystemManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewModels\TipMsgResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipMsgResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Images\我已预约-normal.png" />
+    <Resource Include="Images\我无预约-normal.png" />
+    <Resource Include="Images\我已预约--click.png" />
+    <Resource Include="Images\ymjlogo.png" />
+    <Content Include="Libs\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="Libs\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="Libs\TxPrnMod.dll" />
+    <Content Include="PHPrint.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="ViewModels\Test\hz.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewModels\Test\twn.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewModels\Test\ga.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="ViewModels\Test\deviceInfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ViewModels\Test\dictionaryType.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ViewModels\Test\dy_check.json" />
+    <None Include="ViewModels\Test\idCardInfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ViewModels\Test\phSendOut.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ViewModels\Test\provinceInfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ViewModels\Test\qzzlList.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ViewModels\Test\systemParameters.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ViewModels\Test\yysqxx.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ViewModels\Test\yyzb.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Themes\Resources\iconfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Freedom.BLL\Freedom.BLL.csproj">
+      <Project>{32058c04-5b67-4fab-8a75-756444631649}</Project>
+      <Name>Freedom.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Freedom.Common\Freedom.Common.csproj">
+      <Project>{f071bdfc-0e85-46f8-a5cc-e34de29a7ebf}</Project>
+      <Name>Freedom.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Freedom.Config\Freedom.Config.csproj">
+      <Project>{7f14f206-656e-4f64-aa03-61ed792fa831}</Project>
+      <Name>Freedom.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Freedom.Control\Freedom.Controls.csproj">
+      <Project>{a84dfb0a-0711-4ee0-b4e2-df5923138cba}</Project>
+      <Name>Freedom.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Freedom.Hardware\Freedom.Hardware.csproj">
+      <Project>{4a2adee2-662b-4a6d-8d97-6fe41c5032dc}</Project>
+      <Name>Freedom.Hardware</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Freedom.Models\Freedom.Models.csproj">
+      <Project>{56f79a44-1e01-4ace-b3b8-deadef00c124}</Project>
+      <Name>Freedom.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Freedom.WinAPI\Freedom.WinAPI.csproj">
+      <Project>{df706dd1-8cbd-4cc6-bad8-f39c2a172c06}</Project>
+      <Name>Freedom.WinAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MachineCommandService\MachineCommandService.csproj">
+      <Project>{5c225b75-f2d8-4400-b6fc-ff415c9523b0}</Project>
+      <Name>MachineCommandService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Resources\demo_index.html" />
+    <Content Include="Themes\Resources\iconfont.css" />
+    <Resource Include="Themes\Resources\Image\sfz.gif" />
+    <Resource Include="Themes\Resources\Image\TipIcon.png" />
+    <Resource Include="Themes\Resources\Image\sendNo.gif" />
+    <Resource Include="Themes\Resources\Image\spr.gif" />
+    <Resource Include="Themes\Resources\Image\twn.png" />
+    <Resource Include="Themes\Resources\Image\hkg.png" />
+    <Resource Include="Themes\Resources\Image\hz.png" />
+    <Resource Include="Images\我已预约--normal.png" />
+    <Resource Include="Images\我已预约-click.png" />
+    <Resource Include="Images\我无预约--normal.png" />
+    <Resource Include="Images\我无预约-click.png" />
+    <Resource Include="Images\LOGO.png" />
+    <Resource Include="Images\sfz.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Libs\FirstFloor.ModernUI.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SelfServiceTerminalsSystem.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
+</Project>

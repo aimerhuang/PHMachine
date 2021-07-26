@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NonEmptySelectsTipMsg" xml:space="preserve">
+    <value>请选择至少一种办证类型</value>
+  </data>
+  <data name="NonEmptySelectTipMsg" xml:space="preserve">
+    <value>请选择有效的预约时间段</value>
+  </data>
+  <data name="NonEmptyTipMsg" xml:space="preserve">
+    <value>{0}不能为空，请重新填写</value>
+  </data>
+  <data name="DocumentExpirationTipMsg" xml:space="preserve">
+    <value>当前证件已过期失效，请选择[失效重新申领]</value>
+  </data>
+  <data name="DocumentGAYearTipMsg" xml:space="preserve">
+    <value>当前证件有效期小于半1年，默认只能办理[3个月一次]</value>
+  </data>
+  <data name="DocumentMonthTipMsg" xml:space="preserve">
+    <value>当前证件有效期小于3个月零30天，不能选择[3个月一次]，请选择[遗失补发]或[到期换发]</value>
+  </data>
+  <data name="DocumentTWNYearTipMsg" xml:space="preserve">
+    <value>当前证件有效期小于半1年，默认只能办理[6个月一次]</value>
+  </data>
+  <data name="DocumentValidTipMsg" xml:space="preserve">
+    <value>当前证件有效期大于当前日期，不能选择[首次申请] 或[失效重新申领],请选择其它办证类别</value>
+  </data>
+  <data name="FirstApplyTipMsg" xml:space="preserve">
+    <value>未查询到您的证件信息，不能选择其它办证类型，请选择[首次申请]</value>
+  </data>
+  <data name="HZAddApplyTipMsg" xml:space="preserve">
+    <value>普通护照中请填写至少一条加注事由</value>
+  </data>
+  <data name="IDCardInitializationTipMsg" xml:space="preserve">
+    <value>初始化身份证阅读器失败,请检查接线或重启软件</value>
+  </data>
+  <data name="IDCardQuueryTipMsg" xml:space="preserve">
+    <value>核对身份信息中，请等待...</value>
+  </data>
+  <data name="PrintInitializationTipMsg" xml:space="preserve">
+    <value>初始化打印机失败,请检查接线或重启软件</value>
+  </data>
+  <data name="ScanningReceiptTipMsg" xml:space="preserve">
+    <value>初始化扫描枪失败,请检查接线或重启软件</value>
+  </data>
+  <data name="TimeOutTipMsg" xml:space="preserve">
+    <value>操作超时，现在返回首页请重新操作！</value>
+  </data>
+  <data name="GJGWRYTipMsg" xml:space="preserve">
+    <value>您不符合自助办理条件，不能取号，若有疑问，请移步人工窗口咨询!（G）</value>
+  </data>
+  <data name="IdentityErrorTipMsg" xml:space="preserve">
+    <value>身份核验失败，请重试！</value>
+  </data>
+  <data name="SKDXTipMsg" xml:space="preserve">
+    <value>您不符合自助办理条件，不能取号，若有疑问，请移步人工窗口咨询!（S）</value>
+  </data>
+  <data name="GJGWRYExceptionTipMsg" xml:space="preserve">
+    <value>身份核验发生异常，请重试！（G）</value>
+  </data>
+  <data name="IDCardErrorTipMsg" xml:space="preserve">
+    <value>身份证号码有误，请您重新输入</value>
+  </data>
+  <data name="IDCardNonEmptyTipMsg" xml:space="preserve">
+    <value>身份证不能为空或格式错误，请重新填写</value>
+  </data>
+  <data name="IdentityExceptionTipMsg" xml:space="preserve">
+    <value>未查到人口信息：身份核验失败，请重试！</value>
+  </data>
+  <data name="ScanningReceiptErrorTipMsg" xml:space="preserve">
+    <value>您扫描或手输入的相片回执格式不正确，请重新操作！</value>
+  </data>
+  <data name="SKDXExceptionTipMsg" xml:space="preserve">
+    <value>身份核验发生异常，请重试！（S）</value>
+  </data>
+  <data name="GlobalExceptionTipMsg" xml:space="preserve">
+    <value>程序发生严重异常,请联系工作人员处理。</value>
+  </data>
+  <data name="QZTipMsg" xml:space="preserve">
+    <value>您的申请类型已选择仅签注，办证类别请选择[持证申请签注]</value>
+  </data>
+  <data name="TXZTipMsg" xml:space="preserve">
+    <value>您的申请类型已选择仅通行证，不能选择[持证申请签注]，请选择其它办证类别</value>
+  </data>
+  <data name="HKGErrorTipMsg" xml:space="preserve">
+    <value>您的户口不是深圳户籍，不能办理一年多次签注，请重新选择！</value>
+  </data>
+  <data name="AddressTipMsg" xml:space="preserve">
+    <value>您所选择的户口所在地与人口库不符合，请再次确认无误！</value>
+  </data>
+  <data name="DQZMsg" xml:space="preserve">
+    <value>您选择的办证类型与仅签注业务冲突，请重新选择！</value>
+  </data>
+</root>
